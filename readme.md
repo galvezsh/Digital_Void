@@ -16,6 +16,7 @@ Each HTML file acts as a lightweight entry point — it contains minimal markup 
 
 ## 📁 Project Structure
 
+```plaintext
 DigitalStudio/
 ├── books/
 ├── css/
@@ -43,6 +44,7 @@ DigitalStudio/
 ├── robots.txt
 ├── start.html
 └── .gitignore
+```
 
 
 ## 🌍 Multilanguage Support
