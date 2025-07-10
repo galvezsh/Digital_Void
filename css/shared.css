@@ -1,70 +1,92 @@
+@import url('https://fonts.googleapis.com/css2?family=Onest:wght@400;700&display=swap');
+@import url('themes.css');
+
+/***********/
+/* GENERIC */
+/***********/
 body {
     margin: auto;
-    width: 80%;
     font-size: 18px;
-    font-family: monospace;
-    background-color: #212529;
-    color: white;
+    font-family: onest, sans-serif;
+    background-color: var( --bg-color );
+    color: var( --text-color );
 }
 
-h1 {
-    margin: 0;
-    font-weight: normal;
-    font-size: 40px;
+h1, h2, h3, h4, h5, h6 {
+    color: var( --title-color );
 }
 
-h2 {
-    margin: 0;
-    font-weight: normal;
-    font-size: 32px;
+div.bg-radial {
+    position: fixed;
+    height: 100%;
+    inset: 0;
+    z-index: -2;
+    background: var( --bg-gradient );
 }
 
-h3 {
-    margin: 0;
-    font-weight: normal;
-    font-size: 26px;
+strong {
+    color: var( --link-color-hover );
+}
+
+div.content {
+    margin: auto;
+    max-width: 700px;
+}
+
+div.container {
+    margin-bottom: 80px;
 }
 
 a {
     text-decoration: none;
     transition: 150ms ease-in-out;
-    color: #0066CC;
+    color: var( --link-color );
 }
 
 a:hover {
-    transform: scale(1.1);
-    color: #00FF00;
+    color: var( --link-color-hover );
 }
 
+/***********/
+/* BUTTONS */
+/***********/
 button {
     padding: 8px 12px;
-    background-color: darkgray;
-    border: 1px solid darkgray;
-    color: white;
     border-radius: 7px;
-    font-family: monospace;
     font-size: 16px;
     transition: 200ms ease-in-out;
 }
 
 button.primary {
-    background-color: #0d6efd;
-    border-color: #0d6efd;
+    background-color: var( --button-primary );
+    border-color: var( --button-primary );
+    color: var( --text-color );
 }
 
-button.primary:hover {
-    background-color: #0b5ed7;
-    border-color: #0b5ed7;
+button:not( :disabled ).primary:hover {
+    background-color: var( --button-primary-hover );
+    border-color: var( --button-primary-hover );
+}
+
+button:disabled.primary {
+    background-color: var( --button-primary-hover );
+    border-color: var( --button-primary-hover );
 }
 
 button.secondary {
-    background-color: #6c757d;
-    border-color: #6c757d;
+    background-color: var( --button-secondary );
+    border-color: var( --button-secondary );
+    color: var( --text-color );
 }
 
-button.secondary:hover {
-    background-color: #5c636a;
-    border-color: #5c636a;
+button:not( :disabled ).secondary:hover {
+    background-color: var( --button-secondary-hover );
+    border-color: var( --button-secondary-hover );
+}
+
+button:disabled.secondary {
+    background-color: var( --button-secondary-hover );
+    border-color: var( --button-secondary-hover );
 }
 
 /**********/
@@ -72,10 +94,9 @@ button.secondary:hover {
 /**********/
 nav {
     display: flex;
-    align-items: center;
-    padding: 16px 0px;
-    border-bottom: 1px solid grey;
-    font-size: 16px;
+    margin-top: 8px;
+    margin-bottom: 80px;
+    font-size: 15px;
 }
 
 nav > img {
@@ -87,18 +108,23 @@ nav > ul {
     list-style: none;
     padding: 0;
     margin: 0;
-    margin-left: 8px;
+    margin-left: auto;
     margin-right: auto;
+    gap: 20px;
 }
 
 nav a {
     display: block;
     padding: 8px;
-    color: white;
+    color: var( --text-color );
+}
+
+nav a:hover {
+    transform:  scale( 1.1 );
 }
 
 nav a.active {
-    color: grey;
+    color: var( --text-color-alternative );
 }
 
 /*********/
@@ -114,33 +140,33 @@ div.toast {
     margin: 16px;
     border-radius: 5px;
     overflow: hidden;
-    color: black;
+    color: var( --toast-text-color );
     font-size: 14px;
     z-index: 2;
 }
 
 div.toast div.header {
     padding: 10px 12px;
-    background-image: linear-gradient(180deg, rgba(255, 255, 255, 0.15), rgba(255, 255, 255, 0));
-    color: #6c757d;
+    background-image: linear-gradient( 180deg, var( --toast-header-gradient-color-from ), var( --toast-header-gradient-color-to ) );
+    color: var( --toast-header-color );
     font-weight: bold;
 }
 
 div.toast .bg-info {
-    background-color: #0dcaf0;
+    background-color: var( --toast-header-info-color );
 }
 
 div.toast .bg-warning {
-    background-color: #ffc107;
+    background-color: var( --toast-header-warning-color );
 }
 
 div.toast .bg-error  {
-    background-color: #dc3545;
+    background-color: var( --toast-header-error-color );
 }
 
 div.toast div.body {
     padding: 12px;
-    background-color: rgba(255, 255, 255, 0.8);
+    background-color: var( --toast-background-color );
 }
 
 /*********/
@@ -154,7 +180,7 @@ div.modal {
     left: 0;
     width: 100%;
     height: 100%;
-    background-color: rgba(0, 0, 0, 0.7);
+    background-color: var( --modal-background-border-color );
     z-index: 2;
 }
 
@@ -166,8 +192,8 @@ div.modal > div.content {
     margin-left: 10px;
     margin-right: 10px;
     border-radius: 7px;
-    background-color: white;
-    color: black;
+    background-color: var( --modal-background-color );
+    color: var( --modal-text-color );
 }
 
 /* Padding for the header, body and footer */
@@ -177,8 +203,8 @@ div.modal > div.content div {
 }
 
 div.modal > div.content div.body {
-    border-top: 1px solid rgba(0, 0, 0, 0.175);
-    border-bottom: 1px solid rgba(0, 0, 0, 0.175);
+    border-top: 1px solid var( --modal-border-color );
+    border-bottom: 1px solid var( --modal-border-color );
     font-size: 16px;
 }
 
@@ -191,70 +217,6 @@ div.modal p:last-child {
     margin: 0;
 }
 
-/***********/
-/* BREAKER */
-/***********/
-div.breaker {
-    padding-top: 30px;
-    text-align: center;
-}
-
-/**************/
-/* CONTAINERS */
-/**************/
-div.container {
-    position: relative;
-    overflow: hidden;
-    padding: 40px;
-    margin: 30px 0px;
-    border-radius: 30px;
-    text-align: left;
-    background-color: #333;
-    box-shadow: 0 0 20px 0px rgba(0, 0, 0, 0.3);
-}
-
-div.container > h1 {
-    position: inherit;
-    margin-top: 8px;
-    margin-bottom: 8px;
-    text-align: left;
-    z-index: 1;
-}
-
-div.container > h2 {
-    position: inherit;
-    margin-top: 8px;
-    margin-bottom: 24px;
-    text-align: left;
-    z-index: 1;
-}
-
-div.container > h3 {
-    position: inherit;
-    padding-bottom: 8px;
-    border-bottom: 1px solid gray;
-    text-align: center;
-    z-index: 1;
-}
-
-div.container > p {
-    position: inherit;
-    margin: 0;
-    padding: 8px 0px;
-    text-align: justify;
-    line-height: 28px;
-    z-index: 1;
-}
-
-div.container > .background {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-}
-
 /**********/
 /* FOOTER */
 /**********/
@@ -263,8 +225,7 @@ footer {
     justify-content: space-between;
     align-items: center;
     padding: 16px 0px;
-    border-top: 1px solid grey;
-    color: grey;
+    color: var( --text-color-alternative );
     font-size: 16px;
 }
 
@@ -286,58 +247,12 @@ footer > ul a:hover {
 }
 
 footer a {
-    color: grey;
-}
-
-/*********/
-/* MEDIA */
-/*********/
-
-/* For small screens (from 0px to 992px) */
-@media (max-width:992px) {
-
-    body {
-        width: 95%;
-        font-size: 16px;
-    }
-
-    h1 {
-        font-size: 36px;
-    }
-
-    h2 {
-        font-size: 28px;
-    }
-
-    h3 {
-        font-size: 22px;
-    }
-    
-    nav {
-        flex-direction: column;
-    }
-
-    nav > ul {
-        margin-left: auto;
-    }
-
-    footer {
-        flex-direction: column;
-    }
-
-    footer > span {
-        margin-bottom: 12px;
-    }
-
-    div.toast {
-        width: 300px;
-    }
+    color: var( --text-color-alternative );
 }
 
 /**************/
 /* ANIMATIONS */
 /**************/
-
 .animation-fadeIn {
     animation: fadeIn 1s;
 }

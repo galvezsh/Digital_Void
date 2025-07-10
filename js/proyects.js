@@ -7,7 +7,7 @@ import Strings from "../languages/strings.js";
 /////////////////////////////////////////////
 
 const STRINGS = new Strings( new Cookie( document ).getCookie( "locale" ) );
-const HTML = new Html( document, STRINGS, STRINGS.websiteName, STRINGS.proyectsNavbarLabel, STRINGS.proyects );
+const HTML = new Html( document, STRINGS, STRINGS.websiteName, STRINGS.proyects );
 
 /////////////////////////////////////////////
 // SCRIPT ///////////////////////////////////

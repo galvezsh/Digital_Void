@@ -11,11 +11,9 @@ class Strings {
         // LINKS
         Object.assign(this, {
             // NAVBAR
-            developerImgLink: "developer.png",
-            startLink: "start.html",
-            portfolioLink: "portfolio.html",
-            proyectsLink: "proyects.html",
-            aboutLink: "about.html",
+            startLink: "/start",
+            proyectsLink: "/proyects",
+            aboutLink: "/about",
 
             // FOOTER
             youtubeLink: "https://www.youtube.com/@galvezsh",

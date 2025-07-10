@@ -16,17 +16,18 @@ Each HTML file acts as a lightweight entry point — it contains minimal markup 
 
 ## 📁 Project Structure
 
+```plaintext
 DigitalStudio/
 ├── books/
 ├── css/
 │ ├── brands-icons.css
+│ ├── errors.css
 │ ├── shared.css
-│ └── start.css
+│ └── themes.css
 ├── errors/
 ├── js/
 │ ├── about.js
 │ ├── engine.js # Core rendering engine with all classes
-│ ├── portfolio.js
 │ ├── proyects.js
 │ └── start.js
 ├── languages/
@@ -38,11 +39,11 @@ DigitalStudio/
 │ └── videos/
 ├── about.html
 ├── credentials.txt
-├── portfolio.html
 ├── proyects.html
 ├── robots.txt
 ├── start.html
 └── .gitignore
+```
 
 
 ## 🌍 Multilanguage Support

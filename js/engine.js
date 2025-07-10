@@ -6,20 +6,14 @@ class NavBar {
      * @param {document} html The HTML document for access to the HTML blocks
      * @param {string} title The title that will appers in the right side of the Navbar
      */
-    constructor( document, STRINGS, title, navItemSelected ) {
-        const img = document.querySelector("nav img");
-        const ul = document.querySelector("nav ul");
+    constructor( document, STRINGS, navItemSelected ) {
+        const nav = document.querySelector("div.content nav");
+        const ul = document.createElement("ul");
         const navItems = {
             [STRINGS.start]: [STRINGS.startLink],
-            [STRINGS.portfolio]: [STRINGS.portfolioLink],
             [STRINGS.proyects]: [STRINGS.proyectsLink],
             [STRINGS.about]: [STRINGS.aboutLink]
         };
-
-        document.querySelector("nav span").textContent = title;
-        img.src = "resources/images/" + STRINGS.developerImgLink;
-        img.alt = STRINGS.developerImgAlt;
-        img.style.width = "36px";
 
         Object.entries( navItems ).forEach( ([text, href]) => {
             const li = document.createElement("li");
@@ -35,6 +29,8 @@ class NavBar {
             li.appendChild(a);
             ul.appendChild(li);
         });
+
+        nav.appendChild(ul);
     }
 }
 
@@ -249,7 +245,7 @@ class Cookie {
      * This function reset all the cookies to their default values
      */
     resetCookies() {
-        this.setCookie( "firstLogin", "false", 7 );
+        this.setCookie( "logged", "false", 7 );
         this.setCookie( "locale", "en", 7 );
     }
 }
@@ -261,8 +257,8 @@ class Html {
      * @param {string} title The title of the HTML
      * @param {string} navTitle The label of the navbar
      */
-    constructor( document, STRINGS, docTitle, navTitle, navItemSelected ) {
-        this.navbar = new NavBar( document, STRINGS, navTitle, navItemSelected );
+    constructor( document, STRINGS, docTitle, navItemSelected ) {
+        this.navbar = new NavBar( document, STRINGS, navItemSelected );
         this.toast = new Toast( document, STRINGS );
         this.modal = new Modal( document );
         this.footer = new Footer( document, STRINGS );
@@ -277,15 +273,17 @@ class Html {
                 // If the element is a <button> or an <input>
                 if (element.tagName === "INPUT" || element.tagName === "BUTTON") {
                     element.value = value;
-                    element.textContent = value;
+                    element.innerHTML = value;
                 } else {
-                    element.textContent = value;
+                    element.innerHTML = value;
                 }
             }
         });
 
+        // SET THEME ON THE HTML
+
         // Check if is the first time of the user in the website
-        if ( this.cookie.getCookie( "firstLogin" ) != "true" ) {
+        if ( this.cookie.getCookie( "logged" ) != "true" ) {
             this.firstStart( STRINGS );
         }
     }
@@ -295,7 +293,7 @@ class Html {
      */
     firstStart( STRINGS ) {
         this.toast.showToast(1, STRINGS.betaSite, 8);
-        this.cookie.setCookie( "firstLogin", "true", 7);
+        this.cookie.setCookie( "logged", "true", 7);
         this.cookie.setCookie( "locale", "en", 7);
     }
 }

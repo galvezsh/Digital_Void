@@ -2,19 +2,32 @@
 <html lang="es">
     
 <head>
-    <title>EPDG: Espera agotada</title>
     <meta charset='utf-8'>
     <meta http-equiv='X-UA-Compatible' content='IE=edge'>
     <meta name='viewport' content='width=device-width, initial-scale=1'>
-    <link rel="shortcut icon" href="../resources/imgs/favicon.jpg" type="image/x-icon">
+    <link rel="shortcut icon" href="../resources/images/favicon.jpg" type="image/x-icon">
     <link rel="stylesheet" href="../css/errors.css">
+    <script src="../js/engine.js" defer></script>
+
 </head>
 <body>
-    <div class="error-container">
+    <div class="bg-radial"></div>
+    <div class="error-container" id="error504Label">
         <h1>Error 504</h1>
-        <p>El servidor al que intentas acceder no responde.</p>
-        <p>Se ha agotado el tiempo de espera del servidor.</p>
-        <p>Disculpe las molestias.</p>
     </div>
 </body>
 </html>
+
+<script type="module">
+    import Strings from "../languages/strings.js";
+    const STRINGS = new Strings( new Cookie( document ).getCookie( "locale" ) );
+
+    document.title = STRINGS.error504Title;
+
+    Object.entries( STRINGS ).forEach( ([key, value]) => {
+        const element = document.getElementById(key);
+        if (element) {
+            element.innerHTML += value;
+        }
+    });
+</script>

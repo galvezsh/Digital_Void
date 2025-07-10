@@ -14,12 +14,7 @@
     </head>
 
     <body>
-        <!-- Navbar -->
-        <nav>
-            <img>
-            <ul></ul>
-            <span></span>
-        </nav>
+        <div class="bg-radial"></div>
 
         <!-- Toast -->
         <div class="toast animation-fadeInUp">
@@ -39,46 +34,60 @@
             </div>
         </div>
 
-        <!-- Body -->
-        <div class="container">
-            <h2 id="websiteAboutTitle"></h2>
-            <p><span id="websiteAboutVersionLabel"></span><strong id="websiteVersion"></strong></p>
-            <p><span id="websiteAboutChangelogLabel"></span><strong id="websiteChangelog"></strong></p>
+        <div class="content">
+
+            <!-- Navbar -->
+            <nav></nav>
+
+            <!-- Body -->
+            <div class="container">
+                <h2 id="websiteAboutTitle"></h2>
+                <p><span id="websiteAboutVersionLabel"></span><strong id="websiteVersion"></strong></p>
+                <p><span id="websiteAboutChangelogLabel"></span><strong id="websiteChangelog"></strong></p>
+            </div>
+    
+            <div class="container">
+                <h2 id="websiteLegacyTitle"></h2>
+                <p id="websiteLegacyLabel"></p>
+                <p><a href="resources/images/gssr_0.1.1.png">v0.1.1</a><span id="websiteLegacy_1"></span></p>
+                <p><a href="resources/images/gssr_0.2.11.png">v0.2.11</a><span id="websiteLegacy_2"></span></p>
+                <p><a href="resources/images/eedg_0.3.1.png">v0.3.1</a><span id="websiteLegacy_3"></span></p>
+            </div>
+    
+            <div class="container">
+                <h2 id="websiteConfigTitle"></h2>
+                <p id="websiteConfigLocaleLabel"></p>
+                <button class="primary" id="websiteConfigLocaleEn"></button>
+                <button class="primary" id="websiteConfigLocaleEs"></button>
+    
+                <br><br>
+    
+                <p id="websiteConfigThemeLabel"></p>
+                <button class="primary" id="websiteConfigThemeLight"></button>
+                <button class="primary" id="websiteConfigThemeDark"></button>
+    
+                <br><br>
+    
+                <p id="websiteConfigRestoreLabel"></p>
+                <button class="primary" id="websiteConfigRestoreButton"></button>
+            </div>
+
+            <!-- Footer -->
+            <footer>
+
+                <span id="footerLabel"></span>
+
+                <ul>
+                    <li class="yt"><a><i class="fi fi-brands-youtube"></i></a></li>
+                    <li class="tw"><a><i class="fi fi-brands-twitch"></i></a></li>
+                    <li class="di"><a><i class="fi fi-brands-discord"></i></a></li>
+                    <li class="in"><a><i class="fi fi-brands-instagram"></i></a></li>
+                    <li class="gh"><a><i class="fi fi-brands-github"></i></a></li>
+                    <li class="li"><a><i class="fi fi-brands-linkedin"></i></a></li>
+                </ul>
+
+            </footer>
+            
         </div>
-
-        <div class="container">
-            <h2 id="websiteLegacyTitle"></h2>
-            <p id="websiteLegacyLabel"></p>
-            <p><a href="resources/img/gssr_1.1.png">v1.1.0</a><span id="websiteLegacy_1"></span></p>
-            <p><a href="resources/img/gssr_2.11.png">v2.11.0</a><span id="websiteLegacy_2"></span></p>
-        </div>
-
-        <div class="container">
-            <h2 id="websiteConfigTitle"></h2>
-            <p id="websiteConfigLocaleLabel"></p>
-            <button class="primary" id="websiteConfigLocaleEn"></button>
-            <button class="primary" id="websiteConfigLocaleEs"></button>
-
-            <br><br>
-
-            <p id="websiteConfigRestoreLabel"></p>
-            <button class="primary" id="websiteConfigRestoreButton"></button>
-        </div>
-        
-        <!-- Footer -->
-        <footer>
-
-            <span id="footerLabel"></span>
-
-            <ul>
-                <li class="yt"><a><i class="fi fi-brands-youtube"></i></a></li>
-                <li class="tw"><a><i class="fi fi-brands-twitch"></i></a></li>
-                <li class="di"><a><i class="fi fi-brands-discord"></i></a></li>
-                <li class="in"><a><i class="fi fi-brands-instagram"></i></a></li>
-                <li class="gh"><a><i class="fi fi-brands-github"></i></a></li>
-                <li class="li"><a><i class="fi fi-brands-linkedin"></i></a></li>
-            </ul>
-
-        </footer>
     </body>
 </html>

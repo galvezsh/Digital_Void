@@ -2,20 +2,33 @@
 <html lang="es">
     
 <head>
-    <title>EPDG: Error interno</title>
     <meta charset='utf-8'>
     <meta http-equiv='X-UA-Compatible' content='IE=edge'>
     <meta name='viewport' content='width=device-width, initial-scale=1'>
-    <link rel="shortcut icon" href="../resources/imgs/favicon.jpg" type="image/x-icon">
+    <link rel="shortcut icon" href="../resources/images/favicon.jpg" type="image/x-icon">
     <link rel="stylesheet" href="../css/errors.css">
+    <script src="../js/engine.js" defer></script>
 
 </head>
 <body>
-    <div class="error-container">
+    <div class="bg-radial"></div>
+    <div class="error-container" id="error500Label">
         <h1>Error 500</h1>
-        <p>Se ha producido un error desconocido. ¿No habrás sido tú, verdad?</p>
-        <p>No trates de buscar puertas traseras, ya que no hay.</p>
-        <p>En su lugar, mejor vuelva a la <a href="/start.html">página de inicio</a>.</p>
     </div>
 </body>
 </html>
+
+<script type="module">
+    import Strings from "../languages/strings.js";
+    const STRINGS = new Strings( new Cookie( document ).getCookie( "locale" ) );
+
+    document.title = STRINGS.error500Title;
+
+    Object.entries( STRINGS ).forEach( ([key, value]) => {
+        const element = document.getElementById(key);
+        if (element) {
+            element.innerHTML += value;
+        }
+    });
+</script>
+
