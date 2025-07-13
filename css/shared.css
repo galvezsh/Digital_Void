@@ -9,10 +9,11 @@ body {
     font-size: 18px;
     font-family: onest, sans-serif;
     background-color: var( --bg-color );
-    color: var( --text-color );
+    color: var( --text-color-primary );
 }
 
 h1, h2, h3, h4, h5, h6 {
+    margin-top: 0;
     color: var( --title-color );
 }
 
@@ -25,7 +26,7 @@ div.bg-radial {
 }
 
 strong {
-    color: var( --link-color-hover );
+    color: var( --text-color-secondary );
 }
 
 div.content {
@@ -40,11 +41,11 @@ div.container {
 a {
     text-decoration: none;
     transition: 150ms ease-in-out;
-    color: var( --link-color );
+    color: var( --text-color-tertiary );
 }
 
 a:hover {
-    color: var( --link-color-hover );
+    color: var( --text-color-secondary );
 }
 
 /***********/
@@ -52,7 +53,7 @@ a:hover {
 /***********/
 button {
     padding: 8px 12px;
-    border-radius: 7px;
+    border-radius: 20px;
     font-size: 16px;
     transition: 200ms ease-in-out;
 }
@@ -60,7 +61,7 @@ button {
 button.primary {
     background-color: var( --button-primary );
     border-color: var( --button-primary );
-    color: var( --text-color );
+    color: var( --title-color );
 }
 
 button:not( :disabled ).primary:hover {
@@ -71,12 +72,13 @@ button:not( :disabled ).primary:hover {
 button:disabled.primary {
     background-color: var( --button-primary-hover );
     border-color: var( --button-primary-hover );
+    color: var( --text-color-primary );
 }
 
 button.secondary {
     background-color: var( --button-secondary );
     border-color: var( --button-secondary );
-    color: var( --text-color );
+    color: var( --title-color );
 }
 
 button:not( :disabled ).secondary:hover {
@@ -87,6 +89,7 @@ button:not( :disabled ).secondary:hover {
 button:disabled.secondary {
     background-color: var( --button-secondary-hover );
     border-color: var( --button-secondary-hover );
+    color: var( --text-color-primary );
 }
 
 /**********/
@@ -116,15 +119,15 @@ nav > ul {
 nav a {
     display: block;
     padding: 8px;
-    color: var( --text-color );
+    color: var( --text-color-primary );
 }
 
 nav a:hover {
-    transform:  scale( 1.1 );
+    transform: scale( 1.1 );
 }
 
 nav a.active {
-    color: var( --text-color-alternative );
+    color: var( --text-color-quaternary );
 }
 
 /*********/
@@ -184,6 +187,10 @@ div.modal {
     z-index: 2;
 }
 
+div.modal strong {
+    color: var( --modal-text-color );
+}
+
 div.modal > div.content {
     display: inline-block;
     text-align: left;
@@ -225,7 +232,7 @@ footer {
     justify-content: space-between;
     align-items: center;
     padding: 16px 0px;
-    color: var( --text-color-alternative );
+    color: var( --text-color-quaternary );
     font-size: 16px;
 }
 
@@ -247,7 +254,7 @@ footer > ul a:hover {
 }
 
 footer a {
-    color: var( --text-color-alternative );
+    color: var( --text-color-quaternary );
 }
 
 /**************/

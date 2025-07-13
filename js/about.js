@@ -8,12 +8,12 @@ import Strings from "../languages/strings.js";
 
 const COOKIE = new Cookie( document );
 const STRINGS = new Strings( COOKIE.getCookie( "locale" ) );
-const HTML = new Html( document, STRINGS, STRINGS.websiteName, STRINGS.about );
+const HTML = new Html( document, STRINGS, STRINGS.websiteName, STRINGS.navbarAbout );
 
-let localeEnButton = document.querySelector("#websiteConfigLocaleEn");
-let localeEsButton = document.querySelector("#websiteConfigLocaleEs");
-let themeLightButton = document.querySelector("#websiteConfigThemeLight");
-let themeDarkButton = document.querySelector("#websiteConfigThemeDark");
+let localeEnButton = document.querySelector("#aboutConfigLocaleEn");
+let localeEsButton = document.querySelector("#aboutConfigLocaleEs");
+let themeLightButton = document.querySelector("#aboutConfigThemeLight");
+let themeDarkButton = document.querySelector("#aboutConfigThemeDark");
 
 /////////////////////////////////////////////
 // SCRIPT ///////////////////////////////////
@@ -32,7 +32,7 @@ themeLightButton.addEventListener("click", () => switchTheme( "light" ));
 themeDarkButton.addEventListener("click", () => switchTheme( "dark" ));
 
 document.querySelector("#modalCancel").addEventListener("click", () => HTML.modal.hideModal());
-document.querySelector("#websiteConfigRestoreButton").addEventListener("click", () => resetCookies());
+document.querySelector("#aboutConfigRestoreButton").addEventListener("click", () => resetCookies());
 
 /////////////////////////////////////////////
 // FUNCTIONS ////////////////////////////////

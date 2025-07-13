@@ -7,8 +7,9 @@
         <meta name='viewport' content='width=device-width, initial-scale=1'>
 
         <link rel="shortcut icon" href="/resources/images/favicon.jpg" type="image/x-icon">
-        <link rel='stylesheet' href='css/brands-icons.css'>
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
         <link rel="stylesheet" href="css/shared.css" defer>
+        <link rel="stylesheet" href="css/start.css" defer>
         <script src="js/engine.js" defer></script>
         <script type="module" src="js/start.js" defer></script>
     </head>
@@ -39,18 +40,131 @@
             <!-- Navbar -->
             <nav></nav>
 
+            <div class="container header">
+                <img src="/resources/images/developer.png">
+
+                <div class="flex-header">
+                    <h1 id="startHello"></h1>
+                    <span id="workLabel"></span>
+                </div>
+
+                <p id="startSmallDescription"></p>
+
+                <div class="list">
+                    <a href="" class="list-item" id="link-in" target="_blank">
+                        <i class="fa-brands fa-linkedin"></i> LinkedIn
+                    </a>
+                    <a href="" class="list-item" id="link-gh" target="_blank">
+                        <i class="fa-brands fa-github"></i> GitHub
+                    </a>
+                    <a href="" class="list-item" id="link-em">
+                        <i class="fa-solid fa-envelope"></i> Email
+                    </a>
+                </div>
+
+            </div>
+
+            <div class="container skills">
+                <h2 id="startKnowledge"><i class="fa-solid fa-book"></i></h2>
+                <div>
+                    <div class="skill">
+                        <h3><strong id="startMicroinformatic"></strong></h3>
+                        <p id="startMicroinformaticSkills"></p>
+                        <button class="primary" id="knowMore"></button>
+                    </div>
+                    <div class="skill">
+                        <h3><strong id="startProgramming"></strong></h3>
+                        <p id="startProgrammingSkills"></p>
+                        <button class="primary" id="knowMore"></button>
+                    </div>
+                    <div class="skill">
+                        <h3><strong id="startCibersecurity"></strong></h3>
+                        <p id="startCibersecuritySkills"></p>
+                        <button class="primary" id="knowMore"></button>
+                    </div>
+                </div>
+            </div>
+
+            <div class="container experience">
+                <h2 id="startLaboralExperience"><i class="fa-solid fa-briefcase"></i></h2>
+                <div class="timeline">
+
+                    <div class="timeline-item">
+                        <span class="timeline-date" id="startLaboralExperience_2_Date"></span>
+                        <div class="timeline-content">
+                            <h3><strong id="startLaboralExperience_2_Name"></strong></h3>
+                            <p id="startLaboralExperience_2_Content"></p>
+                        </div>
+                    </div>
+                
+                    <div class="timeline-item">
+                        <span class="timeline-date" id="startLaboralExperience_1_Date"></span>
+                        <div class="timeline-content">
+                            <h3><strong id="startLaboralExperience_1_Name"></strong></h3>
+                            <p id="startLaboralExperience_1_Content"></p>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+
+            <div class="container projects">
+                <h2 id="startProjects"><i class="fa-solid fa-code"></i></h2>
+
+                <div class="project">
+                    <h3><strong id="startProjects_2_Name"></strong></h3>
+                    <p id="startProjects_2_Content"></p>
+                    <div class="list">
+                        <span class="list-item"><i class="fa-brands fa-html5"></i> HTML</span>
+                        <span class="list-item"><i class="fa-brands fa-css3"></i> CSS</span>
+                        <span class="list-item"><i class="fa-brands fa-js"></i> JavaScript</span>
+                        <span class="list-item"><i class="fa-solid fa-code"></i> Oriented Object Programming</span>
+                        <span class="list-item"><i class="fa-solid fa-language"></i> Multilanguage</span>
+                    </div>
+                    <div class="images">
+                        <img src="/resources/images/Digital_studio/image_1.png">
+                    </div>
+                    <div class="list">
+                        <a href="" class="list-item" id="projectsGithub" target="_blank">
+                            <i class="fa-brands fa-github"></i>
+                        </a>
+                    </div>
+                </div>
+
+                <div class="project">
+                    <h3><strong id="startProjects_1_Name"></strong></h3>
+                    <p id="startProjects_1_Content"></p>
+                    <div class="list">
+                        <span class="list-item"><i class="fa-brands fa-android"></i> Kotlin</span>
+                        <span class="list-item"><i class="fa-brands fa-android"></i> Jetpack compose</span>
+                        <span class="list-item"><i class="fa-brands fa-android"></i> MVVM + Clean</span>
+                        <span class="list-item"><i class="fa-brands fa-android"></i> Dagger Hilt</span>
+                        <span class="list-item"><i class="fa-brands fa-android"></i> Retrofit</span>
+                        <span class="list-item"><i class="fa-brands fa-android"></i> Paging 3</span>
+                    </div>
+                    <div class="images">
+                        <img src="resources/images/rickandmorty/image_1.png">
+                        <img src="resources/images/rickandmorty/image_2.png">
+                        <img src="resources/images/rickandmorty/image_3.png">
+                        <img src="resources/images/rickandmorty/image_4.png">
+                    </div>
+                    <div class="images">
+                        <img src="resources/images/rickandmorty/image_5.png">
+                        <img src="resources/images/rickandmorty/image_6.png">
+                        <img src="resources/images/rickandmorty/image_7.png">
+                        <img src="resources/images/rickandmorty/image_8.png">
+                    </div>
+                    <div class="list">
+                        <a href="" class="list-item" id="projectsGithub" target="_blank">
+                            <i class="fa-brands fa-github"></i>
+                        </a>
+                    </div>
+                </div>
+
+            </div>
+
             <!-- Footer -->
-            <footer>
-                <span id="label"></span>
-                <ul>
-                    <li class="yt"><a><i class="fi fi-brands-youtube"></i></a></li>
-                    <li class="tw"><a><i class="fi fi-brands-twitch"></i></a></li>
-                    <li class="di"><a><i class="fi fi-brands-discord"></i></a></li>
-                    <li class="in"><a><i class="fi fi-brands-instagram"></i></a></li>
-                    <li class="gh"><a><i class="fi fi-brands-github"></i></a></li>
-                    <li class="li"><a><i class="fi fi-brands-linkedin"></i></a></li>
-                </ul>
-            </footer>
+            <footer></footer>
             
         </div>
     </body>

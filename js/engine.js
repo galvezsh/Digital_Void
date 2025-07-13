@@ -10,9 +10,9 @@ class NavBar {
         const nav = document.querySelector("div.content nav");
         const ul = document.createElement("ul");
         const navItems = {
-            [STRINGS.start]: [STRINGS.startLink],
-            [STRINGS.proyects]: [STRINGS.proyectsLink],
-            [STRINGS.about]: [STRINGS.aboutLink]
+            [STRINGS.navbarStart]: [STRINGS.navbarStartLink],
+            [STRINGS.navbarProyects]: [STRINGS.navbarProyectsLink],
+            [STRINGS.navbarAbout]: [STRINGS.navbarAboutLink]
         };
 
         Object.entries( navItems ).forEach( ([text, href]) => {
@@ -187,14 +187,38 @@ class Footer {
     /**
      * @param {document} document The HTML document for access to the HTML blocks
      */
-    constructor( document, STRINGS) {
-        document.querySelector("footer span").innerHTML = "&copy; " + STRINGS.websiteName + " - " + new Date().getFullYear();
-        document.querySelector("footer ul li.yt a").href = STRINGS.youtubeLink;
-        document.querySelector("footer ul li.tw a").href = STRINGS.twitchLink;
-        document.querySelector("footer ul li.di a").href = STRINGS.discordLink;
-        document.querySelector("footer ul li.in a").href = STRINGS.instagramLink;
-        document.querySelector("footer ul li.gh a").href = STRINGS.githubLink;
-        document.querySelector("footer ul li.li a").href = STRINGS.linkedinLink;
+    constructor( document, STRINGS ) {
+        const footer = document.querySelector("div.content footer");
+        const label = document.createElement("span");
+        const ul = document.createElement("ul");
+        const footerItems = {
+            ["fa-brands fa-youtube"]: [STRINGS.youtubeLink],
+            ["fa-brands fa-twitch"]: [STRINGS.twitchLink],
+            ["fa-brands fa-discord"]: [STRINGS.discordLink],
+            ["fa-brands fa-instagram"]: [STRINGS.instagramLink],
+            ["fa-brands fa-github"]: [STRINGS.githubLink],
+            ["fa-brands fa-linkedin"]: [STRINGS.linkedinLink]
+        };
+
+        label.innerHTML = "&copy; " + STRINGS.websiteName + " - " + new Date().getFullYear();
+
+        Object.entries( footerItems ).forEach( ([classlist, href]) => {
+            const li = document.createElement("li");
+            const a = document.createElement("a");
+            const icon = document.createElement("i");
+            
+            a.href = href;
+            a.target = "_blank";
+            a.rel = "noopener noreferrer";
+            icon.className = classlist;
+            
+            a.appendChild(icon);
+            li.appendChild(a);
+            ul.appendChild(li);
+        });
+
+        footer.appendChild(label);
+        footer.appendChild(ul);
     }
 }
 
@@ -272,15 +296,15 @@ class Html {
             if (element) {
                 // If the element is a <button> or an <input>
                 if (element.tagName === "INPUT" || element.tagName === "BUTTON") {
-                    element.value = value;
-                    element.innerHTML = value;
+                    element.value += value;
+                    element.innerHTML += value;
                 } else {
-                    element.innerHTML = value;
+                    element.innerHTML += value;
                 }
             }
         });
 
-        // SET THEME ON THE HTML
+        // TODO: SET THEME ON THE HTML
 
         // Check if is the first time of the user in the website
         if ( this.cookie.getCookie( "logged" ) != "true" ) {

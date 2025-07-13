@@ -11,9 +11,9 @@ class Strings {
         // LINKS
         Object.assign(this, {
             // NAVBAR
-            startLink: "/start",
-            proyectsLink: "/proyects",
-            aboutLink: "/about",
+            navbarStartLink: "/start",
+            navbarProyectsLink: "/proyects",
+            navbarAboutLink: "/about",
 
             // FOOTER
             youtubeLink: "https://www.youtube.com/@galvezsh",
@@ -22,6 +22,7 @@ class Strings {
             instagramLink: "https://www.instagram.com/sr.garvez/",
             githubLink: "https://github.com/galvezsh",
             linkedinLink: "https://www.linkedin.com/in/alberto-galvez-gandullo-01838a244/",
+            emailLink: "alberto.galvez.n7@gmail.com"
 
         });
 
