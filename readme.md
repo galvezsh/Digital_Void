@@ -23,14 +23,14 @@ DigitalStudio/
 │ ├── brands-icons.css
 │ ├── errors.css
 │ ├── shared.css
-│ ├── start.css
+│ ├── home.css
 │ └── themes.css
 ├── errors/
 ├── js/
 │ ├── about.js
 │ ├── engine.js # Core rendering engine with all classes
 │ ├── proyects.js
-│ └── start.js
+│ └── home.js
 ├── languages/
 │ ├── en.js # English locale
 │ ├── es.js # Spanish locale
@@ -42,7 +42,7 @@ DigitalStudio/
 ├── credentials.txt
 ├── proyects.html
 ├── robots.txt
-├── start.html
+├── home.html
 └── .gitignore
 ```
 

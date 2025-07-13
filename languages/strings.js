@@ -11,7 +11,7 @@ class Strings {
         // LINKS
         Object.assign(this, {
             // NAVBAR
-            navbarStartLink: "/start",
+            navbarStartLink: "/home",
             navbarProyectsLink: "/proyects",
             navbarAboutLink: "/about",
 
