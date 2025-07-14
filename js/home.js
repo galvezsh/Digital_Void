@@ -25,11 +25,9 @@ document.getElementById("link-in").href = STRINGS.linkedinLink;
 document.getElementById("link-gh").href = STRINGS.githubLink;
 document.getElementById("link-em").href = "mailto:" + STRINGS.emailLink;
 
-document.querySelector("#modalCancel").addEventListener("click", () => HTML.modal.hideModal() );
-
 document.querySelectorAll("#knowMore").forEach( (button, index) => {
     button.textContent = STRINGS.startKnowMore;
-    button.addEventListener("click", () => HTML.modal.showInfoModal( STRINGS.startDeepKnowledge, SKILL_DETAILS[ index ], STRINGS.close ) );
+    button.addEventListener("click", () => HTML.modal.showInfoModal( STRINGS.startDeepKnowledge, SKILL_DETAILS[ index ] ) );
 });
 
 document.querySelectorAll("#projectsGithub").forEach( (link, index) => {

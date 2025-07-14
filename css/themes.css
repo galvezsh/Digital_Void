@@ -17,20 +17,14 @@
     --button-secondary-hover: #5c636a;
 
     /* TOAST */
-    --toast-text-color: black;
-    --toast-background-color: rgba(255, 255, 255, 0.8);
-    --toast-header-color: #6c757d;
-    --toast-header-gradient-color-from: rgba(255, 255, 255, 0.15);
-    --toast-header-gradient-color-to: rgba(255, 255, 255, 0);
-    --toast-header-info-color: #0dcaf0;
-    --toast-header-warning-color: #ffc107;
-    --toast-header-error-color: #dc3545;
+    --toast-header-gradient-color-from: rgba(255, 255, 255, 0.05);
+    --toast-header-gradient-color-to: rgba(255, 255, 255, 0.25);
+    --toast-header-info-color: #0099aa;
+    --toast-header-warning-color: #ba8800;
+    --toast-header-error-color: #990011;
 
     /* MODAL */
-    --modal-text-color: black;
-    --modal-background-color: white;
-    --modal-background-border-color: rgba(0, 0, 0, 0.7);
-    --modal-border-color: rgba(0, 0, 0, 0.175);
+    --modal-outbound-color: rgba(0, 0, 0, 0.7);
 
     /* TIMELINE */
     --timeline-color: #444;

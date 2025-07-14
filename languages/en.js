@@ -93,18 +93,18 @@ export default {
 
     // ABOUT-HTML
     websiteName: "Digital Studio",
-    websiteVersion: "v0.4.2",
-    websiteChangelog: "Full website rebuild, source code optimization, GitHub version control, and renamed to 'Digital Studio'.",
+    websiteVersion: "v0.4.3 (2025.07)",
+    websiteDevelopers: "Alberto Gálvez (galvezsh)",
 
     aboutAboutTitle: "About the Website",
-    aboutAboutVersionLabel: "Website version: ",
-    aboutAboutChangelogLabel: "Patch notes: ",
+    aboutAboutVersion: "Website version: ",
+    aboutAboutDevelopers: "Developers: ",
 
     aboutLegacyTitle: "Legacy History",
     aboutLegacyLabel: "Before being named <strong>'Digital Studio'</strong>, this website went through several phases. Here’s how the homepage looked with each version:",
-    aboutLegacy_1: " - <strong>Birth of GSSR Web</strong>: basic structure design and development.",
-    aboutLegacy_2: " - <strong>Full development of GSSR Web</strong>: object-oriented JavaScript, function-based modular kernel, local integration of Bootstrap 5.2.3 and AnimateCSS 4.1.1.",
-    aboutLegacy_3: " - <strong>Full UI redesign and code rebuild</strong>: dropped Bootstrap and AnimateCSS, and renamed to 'El estudio de Gálvez'.",
+    aboutLegacy_1: " - <strong>Birth of GSSR Web</strong>, basic structure design and development.",
+    aboutLegacy_2: " - <strong>Full development of GSSR Web</strong>, object-oriented JavaScript, function-based modular kernel, local integration of Bootstrap 5.2.3 and AnimateCSS 4.1.1.",
+    aboutLegacy_3: " - <strong>Full UI redesign and code rebuild</strong>, dropped Bootstrap and AnimateCSS, and renamed to 'El estudio de Gálvez'.",
 
     aboutConfigTitle: "Website Settings",
 

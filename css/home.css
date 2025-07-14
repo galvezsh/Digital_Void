@@ -1,9 +1,7 @@
 @import url('themes.css');
 
 h3 {
-    margin: 0;
     padding-bottom: 4px;
-    color: var( --text-color-secondary );
 }
 
 p {
@@ -120,7 +118,7 @@ button {
     width: 100%;
 }
 
-.container.projects .project .list:nth-of-type(1) .list-item {
+.container.projects .project .list-links:nth-of-type(1) .list-item {
     font-size: 12px;
     background-color: var( --text-color-tertiary );
     padding: 4px 8px;

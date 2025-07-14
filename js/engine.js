@@ -123,10 +123,13 @@ class Modal {
     constructor( document ) {
 
         this.modal = document.querySelector("div.modal");
-        this.header = document.querySelector("div.modal div.header");
+        this.header = document.querySelector("div.modal div.header .title");
         this.body = document.querySelector("div.modal div.body");
+        this.footer = document.querySelector("div.modal div.footer");
         this.primaryButton = document.querySelector("div.modal button.primary");
         this.secondaryButton = document.querySelector("div.modal button.secondary");
+
+        document.querySelector("div.modal div.header i").addEventListener("click", () => { this.hideModal(); });
 
         /** Arrow function storing the handler for the "animationend" event.
         * Ensures consistent use of the same function reference for adding and removing the event listener,
@@ -147,7 +150,7 @@ class Modal {
         this.body.innerHTML = newContext;
         this.primaryButton.textContent = primButton;
         this.secondaryButton.textContent = secnButton;
-        this.primaryButton.style.display = "inline-block";
+        this.footer.style.display = "inline-block";
         this.modal.style.display = "block";
     }
 
@@ -158,11 +161,10 @@ class Modal {
      * @param {string} newContext The context of the Modal
      * @param {string} secnButton The text for the second button of the Modal
      *   */
-    showInfoModal( newTitle, newContext, secnButton ) {
+    showInfoModal( newTitle, newContext ) {
         this.header.innerHTML = newTitle;
         this.body.innerHTML = newContext;
-        this.secondaryButton.textContent = secnButton;
-        this.primaryButton.style.display = "none";
+        this.footer.style.display = "none";
         this.modal.style.display = "block";
     }
 

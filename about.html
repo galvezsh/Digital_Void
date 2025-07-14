@@ -9,6 +9,7 @@
         <link rel="shortcut icon" href="resources/images/favicon.jpg" type="image/x-icon">
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
         <link rel="stylesheet" href="css/shared.css" defer>
+        <link rel="stylesheet" href="css/about.css" defer>
         <script src="js/engine.js" defer></script>
         <script type="module" src="js/about.js" defer></script>
     </head>
@@ -25,11 +26,16 @@
         <!-- Modal -->
         <div class="modal animation-fadeIn">
             <div class="content">
-                <div class="header"></div>
+                <div class="header">
+                    <h3 class="title"></h3>
+                    <i class="fa-solid fa-xmark"></i>
+                </div>
                 <div class="body"></div>
                 <div class="footer">
-                    <button type="button" class="primary" id="modalApply"></button>
-                    <button type="button" class="secondary" id="modalCancel"></button>
+                    <div class="buttons">
+                        <button type="button" class="primary" id="modalApply"></button>
+                        <button type="button" class="secondary" id="modalCancel"></button>
+                    </div>
                 </div>
             </div>
         </div>
@@ -40,21 +46,7 @@
             <nav></nav>
 
             <!-- Body -->
-            <div class="container">
-                <h2 id="aboutAboutTitle"><i class="fa-solid fa-globe"></i></h2>
-                <p><span id="aboutAboutVersionLabel"></span><strong id="websiteVersion"></strong></p>
-                <p><span id="aboutAboutChangelogLabel"></span><strong id="websiteChangelog"></strong></p>
-            </div>
-    
-            <div class="container">
-                <h2 id="aboutLegacyTitle"><i class="fa-solid fa-hourglass-half"></i></h2>
-                <p id="aboutLegacyLabel"></p>
-                <p><a href="resources/images/gssr_0.1.1.png">v0.1.1</a><span id="aboutLegacy_1"></span></p>
-                <p><a href="resources/images/gssr_0.2.11.png">v0.2.11</a><span id="aboutLegacy_2"></span></p>
-                <p><a href="resources/images/eedg_0.3.1.png">v0.3.1</a><span id="aboutLegacy_3"></span></p>
-            </div>
-    
-            <div class="container">
+            <div class="container config">
                 <h2 id="aboutConfigTitle"><i class="fa-solid fa-wrench"></i></h2>
                 <p id="aboutConfigLocaleLabel"></p>
                 <button class="primary" id="aboutConfigLocaleEn"></button>
@@ -70,6 +62,37 @@
     
                 <p id="aboutConfigRestoreLabel"></p>
                 <button class="primary" id="aboutConfigRestoreButton"></button>
+            </div>
+    
+            <div class="container legacy">
+                <h2 id="aboutLegacyTitle"><i class="fa-solid fa-hourglass-half"></i></h2>
+                <p id="aboutLegacyLabel"></p>
+
+                <!-- TODO: Unir estos con flex y cambiar las notas del parche por los desarrolladores. Añadir en la version unos parentesis tipo (2025.07) -->
+                <div class="legacyLink">
+                    <span id="aboutLegacy_1"></span>
+                    <div class="list-links">
+                        <a href="resources/images/gssr_0.1.1.png" class="list-item" target="_blank"><i class="fa-solid fa-code"></i> v0.1.1</a>
+                    </div>
+                </div>
+                <div class="legacyLink">
+                    <span id="aboutLegacy_2"></span>
+                    <div class="list-links">
+                        <a href="resources/images/gssr_0.2.11.png" class="list-item" target="_blank"><i class="fa-solid fa-code"></i> v0.2.11</a>
+                    </div>
+                </div>
+                <div class="legacyLink">
+                    <span id="aboutLegacy_3"></span>
+                    <div class="list-links">
+                        <a href="resources/images/eedg_0.3.1.png" class="list-item" target="_blank"><i class="fa-solid fa-code"></i> v0.3.1</a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="container about">
+                <h2 id="aboutAboutTitle"><i class="fa-solid fa-globe"></i></h2>
+                <p><span id="aboutAboutVersion"></span><strong id="websiteVersion"></strong></p>
+                <p><span id="aboutAboutDevelopers"></span><strong id="websiteDevelopers"></strong></p>
             </div>
 
             <!-- Footer -->

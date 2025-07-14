@@ -18,19 +18,23 @@ Each HTML file acts as a lightweight entry point — it contains minimal markup 
 
 ```plaintext
 DigitalStudio/
-├── books/
 ├── css/
-│ ├── brands-icons.css
 │ ├── errors.css
-│ ├── shared.css
 │ ├── home.css
+│ ├── projects.css
+│ ├── shared.css
 │ └── themes.css
+├── docs/
 ├── errors/
+│ ├── 400.html
+│ ├── 401.html
+│ ├── ...
+│ └── 504.html
 ├── js/
 │ ├── about.js
 │ ├── engine.js # Core rendering engine with all classes
-│ ├── proyects.js
-│ └── home.js
+│ ├── home.js
+│ └── projects.js
 ├── languages/
 │ ├── en.js # English locale
 │ ├── es.js # Spanish locale
@@ -40,7 +44,7 @@ DigitalStudio/
 │ └── videos/
 ├── about.html
 ├── credentials.txt
-├── proyects.html
+├── projects.html
 ├── robots.txt
 ├── home.html
 └── .gitignore

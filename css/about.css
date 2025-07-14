@@ -1,0 +1,11 @@
+.legacyLink {
+    margin-bottom: 20px;
+}
+
+.container.legacy span {
+    display: block;
+}
+
+div.container .list-links {
+    margin: 4px 0px;
+}
