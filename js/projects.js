@@ -7,11 +7,18 @@ import Strings from "../languages/strings.js";
 /////////////////////////////////////////////
 
 const STRINGS = new Strings( new Cookie( document ).getCookie( "locale" ) );
-const HTML = new Html( document, STRINGS, STRINGS.websiteName, STRINGS.navbarProyects );
+new Html( document, STRINGS, STRINGS.websiteName, STRINGS.navbarProjects );
+
+const LINKS = [ STRINGS.flipperZeroDoc, STRINGS.minecraftServersDoc, STRINGS.diyServerDoc ];
 
 /////////////////////////////////////////////
 // SCRIPT ///////////////////////////////////
 /////////////////////////////////////////////
+
+document.querySelectorAll("#seeFullDocument").forEach( (link, index) => {
+    link.innerHTML += STRINGS.projectsSeeFullDocument;
+    link.href = LINKS[ index ];
+});
 
 /////////////////////////////////////////////
 // FUNCTIONS ////////////////////////////////

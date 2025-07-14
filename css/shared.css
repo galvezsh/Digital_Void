@@ -17,6 +17,10 @@ h1, h2, h3, h4, h5, h6 {
     color: var( --title-color );
 }
 
+h2 > i {
+    padding-right: 12px;
+}
+
 div.bg-radial {
     position: fixed;
     height: 100%;
@@ -46,6 +50,28 @@ a {
 
 a:hover {
     color: var( --text-color-secondary );
+}
+
+.list {
+    display: flex;
+    gap: 12px;
+    margin: 12px 0px;
+}
+
+.list-item {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    background-color: var( --onBg-color );
+    color: var( --title-color );
+    padding: 8px 16px;
+    border-radius: 999px;
+    text-decoration: none;
+    font-size: 14px;
+}
+
+.list-item i {
+    font-size: 16px;
 }
 
 /***********/

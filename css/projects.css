@@ -1,0 +1,40 @@
+
+h3 {
+    margin: 0;
+    color: var( --text-color-secondary );
+}
+
+p {
+    margin: 0;
+}
+
+.container span {
+    display: inline-block;
+    color: var( --text-color-tertiary );
+    margin-bottom: 8px;
+    font-size: 16px;
+}
+
+.projects {
+    position: relative;
+    border-left: 2px solid var( --timeline-color );
+}
+
+.project {
+    position: relative;
+    margin-bottom: 40px;
+    padding-left: 20px;
+
+}
+
+.project::before {
+    position: absolute;
+    left: -9px;
+    top: 6px;
+    width: 12px;
+    height: 12px;
+    background-color: var( --title-color );
+    border-radius: 50%;
+    border: 2px solid var( --timeline-color );
+    content: "";
+}

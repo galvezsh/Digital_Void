@@ -11,7 +11,7 @@ class NavBar {
         const ul = document.createElement("ul");
         const navItems = {
             [STRINGS.navbarStart]: [STRINGS.navbarStartLink],
-            [STRINGS.navbarProyects]: [STRINGS.navbarProyectsLink],
+            [STRINGS.navbarProjects]: [STRINGS.navbarProjectsLink],
             [STRINGS.navbarAbout]: [STRINGS.navbarAboutLink]
         };
 

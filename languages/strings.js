@@ -12,7 +12,7 @@ class Strings {
         Object.assign(this, {
             // NAVBAR
             navbarStartLink: "/home",
-            navbarProyectsLink: "/proyects",
+            navbarProjectsLink: "/projects",
             navbarAboutLink: "/about",
 
             // FOOTER
@@ -22,7 +22,12 @@ class Strings {
             instagramLink: "https://www.instagram.com/sr.garvez/",
             githubLink: "https://github.com/galvezsh",
             linkedinLink: "https://www.linkedin.com/in/alberto-galvez-gandullo-01838a244/",
-            emailLink: "alberto.galvez.n7@gmail.com"
+            emailLink: "alberto.galvez.n7@gmail.com",
+
+            // DOCS
+            diyServerDoc: "/projects/ryzen",
+            minecraftServersDoc: "/projects/minecraft",
+            flipperZeroDoc: "/projects/flipperzero"
 
         });
 
