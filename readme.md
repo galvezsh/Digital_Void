@@ -19,6 +19,7 @@ Each HTML file acts as a lightweight entry point — it contains minimal markup 
 ```plaintext
 DigitalStudio/
 ├── css/
+│ ├── about.css
 │ ├── errors.css
 │ ├── home.css
 │ ├── projects.css

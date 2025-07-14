@@ -40,7 +40,12 @@ strong {
 
 a {
     text-decoration: none;
+    transition: 150ms ease-in-out;
 }
+
+a:hover {
+    color: var( --text-color-secondary );
+} 
 
 /***********/
 /* BUTTONS */
