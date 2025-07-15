@@ -22,8 +22,8 @@ let themeDarkButton = document.querySelector("#aboutConfigThemeDark");
 if ( COOKIE.getCookie( "locale" ) == "es" ) localeEsButton.disabled = true;
 else localeEnButton.disabled = true;
 
-if ( COOKIE.getCookie( "theme" ) == "dark" ) themeDarkButton.disabled = true;
-else themeLightButton.disabled = true;
+if ( COOKIE.getCookie( "theme" ) == "light" ) themeLightButton.disabled = true;
+else themeDarkButton.disabled = true;
 
 localeEnButton.addEventListener("click", () => switchLanguage( "en" ));
 localeEsButton.addEventListener("click", () => switchLanguage( "es" ));

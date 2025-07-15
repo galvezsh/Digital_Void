@@ -1,39 +1,5 @@
 'use strict';
 
-class NavBar {
-
-    /**
-     * @param {document} html The HTML document for access to the HTML blocks
-     * @param {string} title The title that will appers in the right side of the Navbar
-     */
-    constructor( document, STRINGS, navItemSelected ) {
-        const nav = document.querySelector("div.content nav");
-        const ul = document.createElement("ul");
-        const navItems = {
-            [STRINGS.navbarStart]: [STRINGS.navbarStartLink],
-            [STRINGS.navbarProjects]: [STRINGS.navbarProjectsLink],
-            [STRINGS.navbarAbout]: [STRINGS.navbarAboutLink]
-        };
-
-        Object.entries( navItems ).forEach( ([text, href]) => {
-            const li = document.createElement("li");
-            const a = document.createElement("a");
-            
-            a.textContent = text;
-            a.href = href;
-            
-            if ( text === navItemSelected ) {
-                a.classList.add("active");
-            }
-            
-            li.appendChild(a);
-            ul.appendChild(li);
-        });
-
-        nav.appendChild(ul);
-    }
-}
-
 class Toast {
 
     /**
@@ -184,13 +150,47 @@ class Modal {
     }
 }
 
+class NavBar {
+
+    /**
+     * @param {document} html The HTML document for access to the HTML blocks
+     * @param {string} title The title that will appers in the right side of the Navbar
+     */
+    constructor( document, STRINGS, navItemSelected ) {
+        const nav = document.querySelector("main nav");
+        const ul = document.createElement("ul");
+        const navItems = {
+            [STRINGS.navbarStart]: [STRINGS.navbarStartLink],
+            [STRINGS.navbarProjects]: [STRINGS.navbarProjectsLink],
+            [STRINGS.navbarAbout]: [STRINGS.navbarAboutLink]
+        };
+
+        Object.entries( navItems ).forEach( ([text, href]) => {
+            const li = document.createElement("li");
+            const a = document.createElement("a");
+            
+            a.textContent = text;
+            a.href = href;
+            
+            if ( text === navItemSelected ) {
+                a.classList.add("active");
+            }
+            
+            li.appendChild(a);
+            ul.appendChild(li);
+        });
+
+        nav.appendChild(ul);
+    }
+}
+
 class Footer {
 
     /**
      * @param {document} document The HTML document for access to the HTML blocks
      */
     constructor( document, STRINGS ) {
-        const footer = document.querySelector("div.content footer");
+        const footer = document.querySelector("main footer");
         const label = document.createElement("span");
         const ul = document.createElement("ul");
         const footerItems = {
@@ -273,6 +273,7 @@ class Cookie {
     resetCookies() {
         this.setCookie( "logged", "false", 7 );
         this.setCookie( "locale", "en", 7 );
+        this.setCookie( "theme", "dark", 7 );
     }
 }
 
@@ -292,6 +293,10 @@ class Html {
 
         document.title = docTitle + ": " + navItemSelected;
 
+        // SET THEME ON THE HTML
+        if ( this.cookie.getCookie("theme") == "light" )
+            document.body.classList.add("light");
+
         // SET LOCALE ON THE HTML
         Object.entries( STRINGS ).forEach( ([key, value]) => {
             const element = document.getElementById(key);
@@ -306,8 +311,6 @@ class Html {
             }
         });
 
-        // TODO: SET THEME ON THE HTML
-
         // Check if is the first time of the user in the website
         if ( this.cookie.getCookie( "logged" ) != "true" ) {
             this.firstStart( STRINGS );
@@ -318,8 +321,9 @@ class Html {
      * This function performs a series of special events if it is the first time the user visits the web page
      */
     firstStart( STRINGS ) {
-        this.toast.showToast(1, STRINGS.betaSite, 8);
+        this.toast.showToast(1, "This website is under development and not yet finished. You may experience issues, especially on small screens. 🚧🔧🔨", 8);
         this.cookie.setCookie( "logged", "true", 7);
         this.cookie.setCookie( "locale", "en", 7);
+        this.cookie.setCookie( "theme", "dark", 7);
     }
 }

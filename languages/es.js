@@ -10,7 +10,6 @@ export default {
 
     // TOAST
     blockedToast: "Toast no disponible. Espere a que finalice el anterior.",
-    betaSite: "Este sitio web está en desarrollo y aún no está terminado. Puede experimentar problemas, especialmente en pantallas pequeñas. 🚧🔧🔨",
 
     // MODAL
     resetCookiesHead: "Restaurar configuración",
@@ -93,7 +92,7 @@ export default {
 
     // ABOUT-HTML
     websiteName: "Estudio Digital",
-    websiteVersion: "v0.4.3 (2025.07)",
+    websiteVersion: "v0.4.4 (2025.07)",
     websiteDevelopers: "Alberto Gálvez (galvezsh)",
 
     aboutAboutTitle: "Acerca del sitio web",
@@ -102,9 +101,9 @@ export default {
 
     aboutLegacyTitle: "Legado de antaño",
     aboutLegacyLabel: "Antes de llamarse <strong>'Estudio Digital'</strong>, el sitio web pasó por varias etapas. Aquí puedes ver cómo lucía el inicio con cada versión:",
-    aboutLegacy_1: "- <strong>Nacimiento de GSSR Web</strong>, diseño y desarrollo de la estructura básica.",
-    aboutLegacy_2: "- <strong>Desarrollo completo de GSSR Web</strong>, orientación a objetos en JavaScript, kernel modular basado en funciones, integración local de Bootstrap 5.2.3 y AnimateCSS 4.1.1.",
-    aboutLegacy_3: "- <strong>Rediseño completo de la interfaz y reconstrucción del código</strong>, abandono de Bootstrap y AnimateCSS, y renombrado a 'El estudio de Gálvez'.",
+    aboutLegacy_1: "<strong>Nacimiento de GSSR Web</strong>, diseño y desarrollo de la estructura básica.",
+    aboutLegacy_2: "<strong>Desarrollo completo de GSSR Web</strong>, orientación a objetos en JavaScript, kernel modular basado en funciones, integración local de Bootstrap 5.2.3 y AnimateCSS 4.1.1.",
+    aboutLegacy_3: "<strong>Rediseño completo de la interfaz y reconstrucción del código</strong>, abandono de Bootstrap y AnimateCSS, y renombrado a 'El estudio de Gálvez'.",
 
     aboutConfigTitle: "Configuración del sitio web",
 

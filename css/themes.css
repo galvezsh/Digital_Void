@@ -8,7 +8,11 @@
     --text-color-tertiary: #7878C8;
     --text-color-quaternary: grey;
 
-    --bg-gradient: radial-gradient( ellipse 80% 80% at 50% 0%, rgba(120, 120, 200, 0.3), rgba(255, 255, 255, 0) );
+    --bg-gradient: radial-gradient( 
+        ellipse 80% 80% at 50% 0%, 
+        rgba(120, 120, 200, 0.3), 
+        rgba(255, 255, 255, 0) 
+    );
 
     /* BUTTONS */
     --button-primary: #7878C8;
@@ -29,7 +33,43 @@
     /* TIMELINE */
     --timeline-color: #444;
 }
-/* 
-.light {
 
-} */
+.light {
+    /* BASE */
+    --bg-color: #f9f9f9;
+    --onBg-color: #e0e0e0;
+
+    /* TEXTS */
+    --title-color: #000000;
+    --text-color-primary: #1f1f1f;
+    --text-color-secondary: #ab9642;
+    --text-color-tertiary: #8575ff;
+    --text-color-quaternary: #7a7a7a;
+
+    /* BACKGROUND GRADIENT */
+    --bg-gradient: radial-gradient(
+        ellipse 80% 80% at 50% 0%,
+        rgba(106, 106, 217, 0.25),
+        rgba(0, 0, 0, 0)
+    );
+
+    /* BUTTONS */
+    --button-primary: #8575ff;
+    --button-primary-hover: #6e61f0;
+    --button-secondary: #ced4da;
+    --button-secondary-hover: #b8bec4;
+
+    /* TOAST */
+    --toast-header-gradient-color-from: rgba(0, 0, 0, 0.03);
+    --toast-header-gradient-color-to: rgba(0, 0, 0, 0.08);
+    --toast-header-info-color: #0dcaf0;
+    --toast-header-warning-color: #ffc107;
+    --toast-header-error-color: #dc3545;
+
+    /* MODAL */
+    --modal-outbound-color: rgba(255, 255, 255, 0.85);
+
+    /* TIMELINE */
+    --timeline-color: #bbbbbb;
+
+}

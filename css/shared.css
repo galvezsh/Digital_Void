@@ -1,20 +1,24 @@
 @import url('https://fonts.googleapis.com/css2?family=Onest:wght@400;700&display=swap');
 @import url('themes.css');
+@import url('media.css');
 
 /***********/
 /* GENERIC */
 /***********/
-body {
-    margin: auto;
+html {
+    font-family: "Onest", sans-serif;
     font-size: 18px;
-    font-family: onest, sans-serif;
-    background-color: var( --bg-color );
-    color: var( --text-color-primary );
 }
 
-h1, h2, h3, h4, h5, h6 {
+body {
+    background-color: var(--bg-color);
+    color: var(--text-color-primary);
+    margin: auto;
+}
+
+h1, h2 {
+    color: var(--title-color);
     margin-top: 0;
-    color: var( --title-color );
 }
 
 h2 > i {
@@ -22,187 +26,218 @@ h2 > i {
 }
 
 h3 {
+    color: var(--text-color-secondary);
     margin: 0;
-    color: var( --text-color-secondary );
+    margin-bottom: 4px;
 }
 
-div.bg-radial {
-    position: fixed;
-    height: 100%;
-    inset: 0;
-    z-index: -2;
-    background: var( --bg-gradient );
+h4 {
+    color: var(--text-color-tertiary);
+    margin: 0;
+    margin-bottom: 4px;
+}
+
+p {
+    margin: 16px 0px;
+    line-height: 1.2;
+}
+
+p.mt {
+    margin: 0;
+    margin-top: 16px;
+}
+
+p.mb {
+    margin: 0;
+    margin-bottom: 16px;
+}
+
+p.m0 {
+    margin: 0;
 }
 
 strong {
-    color: var( --text-color-secondary );
+    color: var(--text-color-secondary);
 }
 
 a {
+    color: var(--text-color-tertiary);
     text-decoration: none;
-    transition: 150ms ease-in-out;
+    transition: 200ms ease-in-out;
 }
 
 a:hover {
-    color: var( --text-color-secondary );
-} 
+    color: var(--text-color-secondary);
+}
+
+div.bg-gradient {
+    position: fixed;
+    inset: 0;
+    height: 100%;
+    z-index: -2;
+    background: var(--bg-gradient);
+}
+
+main {
+    margin: auto;
+    max-width: 700px;
+}
 
 /***********/
 /* BUTTONS */
 /***********/
 button {
+    font-size: 0.85rem;
+    margin-top: 8px;
     padding: 8px 12px;
     border-radius: 20px;
-    font-size: 16px;
     transition: 200ms ease-in-out;
+    border: 1px solid transparent;
+    cursor: pointer;
+}
+
+button.primary,
+button.secondary {
+    color: var(--title-color);
 }
 
 button.primary {
-    background-color: var( --button-primary );
-    border-color: var( --button-primary );
-    color: var( --title-color );
-}
-
-button:not( :disabled ).primary:hover {
-    background-color: var( --button-primary-hover );
-    border-color: var( --button-primary-hover );
-}
-
-button:disabled.primary {
-    background-color: var( --button-primary-hover );
-    border-color: var( --button-primary-hover );
-    color: var( --text-color-primary );
+    background-color: var(--button-primary);
+    border-color: var(--button-primary);
 }
 
 button.secondary {
-    background-color: var( --button-secondary );
-    border-color: var( --button-secondary );
-    color: var( --title-color );
+    background-color: var(--button-secondary);
+    border-color: var(--button-secondary);
 }
 
-button:not( :disabled ).secondary:hover {
-    background-color: var( --button-secondary-hover );
-    border-color: var( --button-secondary-hover );
+button.primary:hover:not(:disabled) {
+    background-color: var(--button-primary-hover);
+    border-color: var(--button-primary-hover);
 }
 
-button:disabled.secondary {
-    background-color: var( --button-secondary-hover );
-    border-color: var( --button-secondary-hover );
-    color: var( --text-color-primary );
+button.secondary:hover:not(:disabled) {
+    background-color: var(--button-secondary-hover);
+    border-color: var(--button-secondary-hover);
+}
+
+button.primary:disabled,
+button.secondary:disabled {
+    background-color: var(--button-primary-hover);
+    border-color: var(--button-primary-hover);
+    color: var(--text-color-primary);
+}
+
+button.small {
+    font-size: 0.7rem;
+    padding: 4px 8px;
 }
 
 /*********/
 /* TOAST */
 /*********/
-div.toast {
+.toast {
     display: none;
     position: fixed;
     bottom: 0;
     right: 0;
     width: 350px;
-    height: auto;
     margin: 16px;
+    font-size: 0.8rem;
     border-radius: 5px;
     overflow: hidden;
-    color: var( --text-color-primary );
-    font-size: 14px;
+    color: var(--text-color-primary);
     z-index: 2;
 }
 
-div.toast div.header {
+.toast .header {
     padding: 10px 12px;
-    background-image: linear-gradient( 90deg, var( --toast-header-gradient-color-from ), var( --toast-header-gradient-color-to ) );
     font-weight: bold;
+    background-image: linear-gradient(
+        90deg,
+        var(--toast-header-gradient-color-from),
+        var(--toast-header-gradient-color-to)
+    );
 }
 
-div.toast .bg-info {
-    background-color: var( --toast-header-info-color );
+.toast .bg-info {
+    background-color: var(--toast-header-info-color);
 }
 
-div.toast .bg-warning {
-    background-color: var( --toast-header-warning-color );
+.toast .bg-warning {
+    background-color: var(--toast-header-warning-color);
 }
 
-div.toast .bg-error  {
-    background-color: var( --toast-header-error-color );
+.toast .bg-error {
+    background-color: var(--toast-header-error-color);
 }
 
-div.toast div.body {
+.toast .body {
     padding: 12px;
-    background-color: var( --onBg-color );
+    background-color: var(--onBg-color);
 }
 
 /*********/
 /* MODAL */
 /*********/
-div.modal {
+.modal {
     display: none;
     position: fixed;
-    text-align: center;
     top: 0;
     left: 0;
     width: 100%;
     height: 100%;
-    background-color: var( --modal-outbound-color );
+    text-align: center;
+    background-color: var(--modal-outbound-color);
     z-index: 2;
 }
 
-div.modal > div.content {
+.modal .content {
     display: inline-block;
     text-align: left;
     max-width: 500px;
     margin-top: 30px;
     border-radius: 8px;
-    background-color: var( --onBg-color );
-    color: var( --text-color-primary );
+    background-color: var(--onBg-color);
+    color: var(--text-color-primary);
 }
 
-/* Padding for the header, body and footer */
-div.modal > div.content div {
-    padding: 16px;
-}
-
-div.modal > div.content div.header {
+.modal .header {
     display: flex;
     justify-content: space-between;
     align-items: center;
+    border-bottom: 1px solid var(--text-color-quaternary);
+    padding: 16px;
 }
 
-div.modal > div.content div.header i {
+.modal .header i {
     transform: scale(1.2);
-    color: var( --text-color-quaternary );
+    color: var(--text-color-quaternary);
     padding-right: 2px;
-    transition: 150ms ease-in-out;
+    transition: 200ms ease-in-out;
 }
 
-div.modal > div.content div.header i:hover {
-    color: var( --text-color-primary );
+.modal .header i:hover {
+    color: var(--text-color-primary);
 }
 
-div.modal > div.content div.body {
-    border-top: 1px solid var( --text-color-quaternary );
+.modal .body {
+    margin: 16px;
 }
 
-div.modal > div.content div.footer {
+.modal .footer {
     width: 100%;
     padding: 0;
-    border-top: 1px solid var( --text-color-quaternary );
+    border-top: 1px solid var(--text-color-quaternary);
 }
 
-div.modal > div.content div.footer div.buttons {
+.modal .footer .buttons {
     display: inline-block;
+    padding: 16px;
 }
 
-div.modal > div.content button {
+.modal button {
     border-radius: 8px;
-}
-
-div.modal p {
-    margin-top: 0;
-    line-height: 24px;
-}
-
-div.modal p:last-child {
     margin: 0;
 }
 
@@ -211,9 +246,8 @@ div.modal p:last-child {
 /**********/
 nav {
     display: flex;
-    margin-top: 8px;
-    margin-bottom: 80px;
-    font-size: 15px;
+    margin: 8px 0 80px;
+    font-size: 0.8rem;
 }
 
 nav > img {
@@ -224,63 +258,98 @@ nav > ul {
     display: flex;
     list-style: none;
     padding: 0;
-    margin: 0;
-    margin-left: auto;
-    margin-right: auto;
+    margin: 0 auto;
     gap: 20px;
 }
 
 nav a {
     display: block;
     padding: 8px;
-    color: var( --text-color-primary );
+    color: var(--text-color-primary);
 }
 
 nav a:hover {
-    transform: scale( 1.1 );
+    transform: scale(1.1);
 }
 
 nav a.active {
-    color: var( --text-color-quaternary );
+    color: var(--text-color-quaternary);
 }
 
-/***********/
-/* CONTENT */
-/***********/
-div.content {
-    margin: auto;
-    max-width: 700px;
-}
-
-div.container {
+/**************/
+/* CONTAINERS */
+/**************/
+.container-big {
     margin-bottom: 80px;
 }
 
-div.container .list-links {
-    display: flex;
-    gap: 12px;
-    margin: 12px 0px;
+.container-medium {
+    margin-bottom: 40px;
 }
 
-div.container .list-item {
-    display: flex;  
+.container-small {
+    margin-bottom: 20px;
+}
+
+/**************/
+/* LIST-LINKS */
+/**************/
+.list-links {
+    display: flex;
+    gap: 12px;
+    margin: 12px 0;
+    font-size: 0.8rem;
+}
+
+.list-links .list-item {
+    display: flex;
     align-items: center;
     gap: 8px;
-    background-color: var( --onBg-color );
-    color: var( --title-color );
     padding: 8px 16px;
     border-radius: 999px;
     text-decoration: none;
-    font-size: 14px;
-    transition: 150ms ease-in-out;
+    background-color: var(--onBg-color);
+    color: var(--title-color);
+    transition: 200ms ease-in-out;
 }
 
-div.container .list-item:hover {
-    color: var( --text-color-secondary );
+.list-links .list-item:hover {
+    color: var(--text-color-secondary);
 }
 
-div.container .list-item i {
-    font-size: 16px;
+.list-links .list-item i {
+    font-size: 0.9rem;
+}
+
+/************/
+/* TIMELINE */
+/************/
+.timeline {
+    position: relative;
+    border-left: 2px solid var(--timeline-color);
+    font-size: 0.8rem;
+}
+
+.timeline-item {
+    position: relative;
+    margin-bottom: 40px;
+    padding-left: 20px;
+}
+
+.timeline-item::before {
+    position: absolute;
+    top: 2px;
+    left: -9px;
+    width: 12px;
+    height: 12px;
+    background-color: var(--title-color);
+    border-radius: 50%;
+    border: 2px solid var(--timeline-color);
+    content: "";
+}
+
+.timeline-item p {
+    line-height: 1.5;
 }
 
 /**********/
@@ -290,9 +359,9 @@ footer {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: 16px 0px;
-    color: var( --text-color-quaternary );
-    font-size: 16px;
+    padding: 16px 0;
+    color: var(--text-color-quaternary);
+    font-size: 0.8rem;
 }
 
 footer > ul {
@@ -304,7 +373,7 @@ footer > ul {
 
 footer > ul a {
     display: block;
-    margin: 0px 8px;
+    margin: 0 8px;
     transform: scale(1.1);
 }
 
@@ -313,13 +382,8 @@ footer > ul a:hover {
 }
 
 footer a {
-    color: var( --text-color-quaternary );
+    color: var(--text-color-quaternary);
 }
-
-/***************/
-/* MEDIA-QUERY */
-/***************/
-/* TODO: Do the querys for small windows */
 
 /**************/
 /* ANIMATIONS */
@@ -340,35 +404,33 @@ footer a {
     animation: fadeOutDown 1s;
 }
 
-/* Fade (Modal)*/
 @keyframes fadeIn {
-    0% {opacity: 0} to {opacity: 1}
+    from { opacity: 0; }
+    to { opacity: 1; }
 }
 
 @keyframes fadeOut {
-    0% {opacity: 1} to {opacity: 0}
+    from { opacity: 1; }
+    to { opacity: 0; }
 }
 
-/* FadeInUp & FadeOutDown (Toast) */
 @keyframes fadeInUp {
-    0% {
+    from {
         opacity: 0;
-        transform: translate3d(0, 100%, 0)
+        transform: translate3d(0, 100%, 0);
     }
-
     to {
         opacity: 1;
-        transform: translateZ(0)
+        transform: translateZ(0);
     }
 }
 
 @keyframes fadeOutDown {
-    0% {
-        opacity: 1
+    from {
+        opacity: 1;
     }
-
     to {
         opacity: 0;
-        transform: translate3d(0, 100%, 0)
+        transform: translate3d(0, 100%, 0);
     }
 }

@@ -15,7 +15,7 @@
     </head>
 
     <body>
-        <div class="bg-radial"></div>
+        <div class="bg-gradient"></div>
 
         <!-- Toast -->
         <div class="toast animation-fadeInUp">
@@ -40,64 +40,70 @@
             </div>
         </div>
 
-        <div class="content">
+        <main>
 
             <!-- Navbar -->
             <nav></nav>
 
             <!-- Body -->
-            <div class="container config">
-                <h2 id="aboutConfigTitle"><i class="fa-solid fa-wrench"></i></h2>
-                <p id="aboutConfigLocaleLabel"></p>
-                <button class="primary" id="aboutConfigLocaleEn"></button>
-                <button class="primary" id="aboutConfigLocaleEs"></button>
-    
-                <br><br>
-    
-                <p id="aboutConfigThemeLabel"></p>
-                <button class="primary" id="aboutConfigThemeLight"></button>
-                <button class="primary" id="aboutConfigThemeDark"></button>
-    
-                <br><br>
-    
-                <p id="aboutConfigRestoreLabel"></p>
-                <button class="primary" id="aboutConfigRestoreButton"></button>
-            </div>
-    
-            <div class="container legacy">
-                <h2 id="aboutLegacyTitle"><i class="fa-solid fa-hourglass-half"></i></h2>
-                <p id="aboutLegacyLabel"></p>
-
-                <!-- TODO: Unir estos con flex y cambiar las notas del parche por los desarrolladores. Añadir en la version unos parentesis tipo (2025.07) -->
-                <div class="legacyLink">
-                    <span id="aboutLegacy_1"></span>
-                    <div class="list-links">
-                        <a href="resources/images/gssr_0.1.1.png" class="list-item" target="_blank"><i class="fa-solid fa-code"></i> v0.1.1</a>
-                    </div>
-                </div>
-                <div class="legacyLink">
-                    <span id="aboutLegacy_2"></span>
-                    <div class="list-links">
-                        <a href="resources/images/gssr_0.2.11.png" class="list-item" target="_blank"><i class="fa-solid fa-code"></i> v0.2.11</a>
-                    </div>
-                </div>
-                <div class="legacyLink">
-                    <span id="aboutLegacy_3"></span>
-                    <div class="list-links">
-                        <a href="resources/images/eedg_0.3.1.png" class="list-item" target="_blank"><i class="fa-solid fa-code"></i> v0.3.1</a>
-                    </div>
-                </div>
-            </div>
-
-            <div class="container about">
+            <div class="container-big about">
                 <h2 id="aboutAboutTitle"><i class="fa-solid fa-globe"></i></h2>
                 <p><span id="aboutAboutVersion"></span><strong id="websiteVersion"></strong></p>
                 <p><span id="aboutAboutDevelopers"></span><strong id="websiteDevelopers"></strong></p>
             </div>
 
+            <div class="container-big config">
+                <h2 id="aboutConfigTitle"><i class="fa-solid fa-wrench"></i></h2>
+
+                <div class="container-small">
+                    <p class="m0" id="aboutConfigLocaleLabel"></p>
+                    <button class="primary" id="aboutConfigLocaleEn"></button>
+                    <button class="primary" id="aboutConfigLocaleEs"></button>
+                </div>
+        
+                <div class="container-small">
+                    <p class="m0" id="aboutConfigThemeLabel"></p>
+                    <button class="primary" id="aboutConfigThemeDark"></button>
+                    <button class="primary" id="aboutConfigThemeLight"></button>
+                </div>
+
+                <div class="container-small">    
+                    <p class="m0" id="aboutConfigRestoreLabel"></p>
+                    <button class="primary" id="aboutConfigRestoreButton"></button>
+                </div>
+
+            </div>
+    
+            <div class="container-big legacy">
+                <h2 id="aboutLegacyTitle"><i class="fa-solid fa-hourglass-half"></i></h2>
+                <p id="aboutLegacyLabel"></p>
+
+                <div class="container-small">
+                    <p class="m0" id="aboutLegacy_1"></p>
+                    <div class="list-links">
+                        <a href="resources/images/gssr_0.1.1.png" class="list-item" target="_blank"><i class="fa-solid fa-code"></i> v0.1.1</a>
+                    </div>
+                </div>
+
+                <div class="container-small">
+                    <p class="m0" id="aboutLegacy_2"></p>
+                    <div class="list-links">
+                        <a href="resources/images/gssr_0.2.11.png" class="list-item" target="_blank"><i class="fa-solid fa-code"></i> v0.2.11</a>
+                    </div>
+                </div>
+
+                <div class="container-small">
+                    <p class="m0" id="aboutLegacy_3"></p>
+                    <div class="list-links">
+                        <a href="resources/images/eedg_0.3.1.png" class="list-item" target="_blank"><i class="fa-solid fa-code"></i> v0.3.1</a>
+                    </div>
+                </div>
+
+            </div>
+
             <!-- Footer -->
             <footer></footer>
             
-        </div>
+        </main>
     </body>
 </html>

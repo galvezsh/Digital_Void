@@ -1,126 +1,50 @@
 @import url('themes.css');
 
-h3 {
-    padding-bottom: 4px;
-}
-
-p {
-    margin: 0;
-}
-
-button {
-    padding: 4px 8px;
-    font-size: 14px;
-}
-
-/***************/
-/* CONTAINER 1 */
-/***************/
-.flex-header {
+/************/
+/* ABOUT-ME */
+/************/
+.header .flex-header {
     display: flex;
     align-items: center;
     gap: 10px;
 }
 
-.flex-header > span {
-    font-size: 15px;
-    background-color: var( --text-color-tertiary );
+.header .flex-header > span {
+    font-size: 0.8rem;
+    background-color: var(--text-color-tertiary);
     border-radius: 12px;
     padding: 4px 10px;
 }
 
-.flex-header > * {
+.header .flex-header > * {
     margin: 0;
 }
 
-.container.header img {
+.header img {
     width: 80px;
     border-radius: 50%;
 }
 
-.container.header > p {
-    margin: 22px 0px;
+.header span {
+    color: var(--title-color);
 }
 
-.container.header span {
-    color: var( --title-color );
+/************/
+/* PROJECTS */
+/************/
+.projects img {
+    width: 100%;
 }
 
-/***************/
-/* CONTAINER 2 */
-/***************/
-.skill {
-    margin-bottom: 20px;
-}
-
-.skill p {
-    padding-bottom: 8px;
-}
-
-/***************/
-/* CONTAINER 3 */
-/***************/
-.timeline {
-    position: relative;
-    border-left: 2px solid var( --timeline-color );
-}
-
-.timeline-item {
-    position: relative;
-    margin-bottom: 40px;
-    padding-left: 20px;
-}
-
-.timeline-item::before {
-    position: absolute;
-    left: -9px;
-    top: 6px;
-    width: 12px;
-    height: 12px;
-    background-color: var( --title-color );
-    border-radius: 50%;
-    border: 2px solid var( --timeline-color );
-    content: "";
-}
-
-.timeline-date {
-    display: block;
-    font-size: 14px;
-    padding-top: 4px;
-    margin-bottom: 8px;
-    color: var( --text-color-tertiary );
-}
-
-.timeline-content h3 {
-    font-size: 16px;
-}
-
-.timeline-content p {
-    font-size: 14px;
-    line-height: 1.5;
-}
-
-/***************/
-/* CONTAINER 4 */
-/***************/
-.project {
-    margin-bottom: 80px;
-}
-
-.container.projects .project > .images {
+.projects .project > .images {
     display: flex;
     width: 100%;
     gap: 8px;
     margin-bottom: 12px;
 }
 
-.container.projects img {
-    width: 100%;
-}
-
-.container.projects .project .list-links:nth-of-type(1) .list-item {
+.projects .project .list-links:nth-of-type(1) .list-item {
     font-size: 12px;
-    background-color: var( --text-color-tertiary );
+    background-color: var(--text-color-tertiary);
     padding: 4px 8px;
 }
-

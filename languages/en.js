@@ -10,7 +10,6 @@ export default {
 
     // TOAST
     blockedToast: "Toast not available. Please wait until the previous one finishes.",
-    betaSite: "This website is under development and not yet finished. You may experience issues, especially on small screens. 🚧🔧🔨",
 
     // MODAL
     resetCookiesHead: "Restore Settings",
@@ -93,7 +92,7 @@ export default {
 
     // ABOUT-HTML
     websiteName: "Digital Studio",
-    websiteVersion: "v0.4.3 (2025.07)",
+    websiteVersion: "v0.4.4 (2025.07)",
     websiteDevelopers: "Alberto Gálvez (galvezsh)",
 
     aboutAboutTitle: "About the Website",
@@ -102,9 +101,9 @@ export default {
 
     aboutLegacyTitle: "Legacy History",
     aboutLegacyLabel: "Before being named <strong>'Digital Studio'</strong>, this website went through several phases. Here’s how the homepage looked with each version:",
-    aboutLegacy_1: " - <strong>Birth of GSSR Web</strong>, basic structure design and development.",
-    aboutLegacy_2: " - <strong>Full development of GSSR Web</strong>, object-oriented JavaScript, function-based modular kernel, local integration of Bootstrap 5.2.3 and AnimateCSS 4.1.1.",
-    aboutLegacy_3: " - <strong>Full UI redesign and code rebuild</strong>, dropped Bootstrap and AnimateCSS, and renamed to 'El estudio de Gálvez'.",
+    aboutLegacy_1: "<strong>Birth of GSSR Web</strong>, basic structure design and development.",
+    aboutLegacy_2: "<strong>Full development of GSSR Web</strong>, object-oriented JavaScript, function-based modular kernel, local integration of Bootstrap 5.2.3 and AnimateCSS 4.1.1.",
+    aboutLegacy_3: "<strong>Full UI redesign and code rebuild</strong>, dropped Bootstrap and AnimateCSS, and renamed to 'El estudio de Gálvez'.",
 
     aboutConfigTitle: "Website Settings",
 
