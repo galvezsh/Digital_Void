@@ -1,57 +1,76 @@
 # 🌐 DigitalStudio
 
-**DigitalStudio** is a web project built entirely with **HTML**, **CSS**, and **vanilla JavaScript**, following a unique architecture focused on **object-oriented programming (OOP)** and **runtime rendering**.
+**DigitalStudio** is a modular and multilingual web project built entirely with **HTML**, **CSS**, and **vanilla JavaScript**, using a custom runtime rendering engine and a component-oriented architecture.
 
-Rather than relying on frameworks like React or Vue, DigitalStudio features a self-built engine that dynamically generates the page content through reusable JS objects and multilingual support.
+Unlike frameworks like React or Vue, DigitalStudio relies on a fully native and framework-free approach, using JavaScript classes to dynamically generate content, support multiple languages, and simulate reusable components.
 
+---
 
 ## ⚙️ How It Works
 
-Each HTML file acts as a lightweight entry point — it contains minimal markup and simply loads a dedicated JavaScript file (e.g., `about.js`, `portfolio.js`, etc.). That script:
+Each HTML file serves as a lightweight entry point. It only needs minimal markup and a corresponding JS file (`about.js`, `projects.js`, etc.). That JS file does the following:
 
-1. Loads the **`engine.js`** file, which contains all core classes and rendering logic.
-2. Loads the **language system** from `strings.js`, which automatically selects the correct locale based on a **browser cookie**.
-3. Builds the actual HTML content using the engine’s predefined object structures.
+1. Loads the **`engine.js`** file, which acts as the **component renderer and entry point**.
+2. Loads the **multilanguage manager** (`strings.js`), which selects the locale automatically based on a **browser cookie**.
+3. Dynamically builds the page by rendering imported UI components, each defined in its own file under `/js/componentes`.
 
+
+### ✅ What's New
+
+- All UI components (e.g., Navbar, Footer, Toast) are now in **separate JavaScript files** inside the `/js/componentes/` directory.
+- `engine.js` no longer contains the full component definitions — it now **orchestrates** rendering and **connects logic**.
+- There's no need to manually create full HTML blocks for components. You simply **declare an element with a class** in your HTML (e.g. `<nav></nav> || <div class="modal"></div>`) and the engine will render it automatically.
+- This makes the system even more similar to **React**, as components are:
+  - Fully isolated and reusable
+  - Auto-rendered
+  - Data-driven and dynamic
+
+---
 
 ## 📁 Project Structure
 
 ```plaintext
 DigitalStudio/
 ├── css/
-│ ├── about.css
-│ ├── animations.css
-│ ├── errors.css
-│ ├── home.css
-│ ├── projects.css
-│ ├── shared.css
-│ └── themes.css
+│   ├── about.css
+│   ├── animations.css
+│   ├── errors.css
+│   ├── home.css
+│   ├── projects.css
+│   ├── shared.css
+│   └── themes.css
 ├── docs/
 ├── errors/
-│ ├── 400.html
-│ ├── 401.html
-│ ├── ...
-│ └── 504.html
+│   ├── 400.html
+│   ├── 401.html
+│   ├── ...
+│   └── 504.html
 ├── js/
-│ ├── about.js
-│ ├── engine.js # Core rendering engine with all classes
-│ ├── home.js
-│ └── projects.js
+│   ├── componentes/
+│   │   ├── Footer.js
+│   │   ├── Modal.js
+│   │   ├── NavBar.js
+│   │   ├── Toast.js
+│   ├── about.js
+│   ├── engine.js  # Only handles rendering logic and component bootstrapping
+│   ├── home.js
+│   └── projects.js
 ├── languages/
-│ ├── en.js # English locale
-│ ├── es.js # Spanish locale
-│ └── strings.js # Multilanguage manager (cookie-based)
-├── resources/ # Not uploaded for size
-│ ├── images/
-│ └── videos/
+│   ├── en.js       # English strings
+│   ├── es.js       # Spanish strings
+│   └── strings.js  # Language detection and loader
+├── resources/
+│   ├── images/
+│   └── videos/
 ├── about.html
 ├── credentials.txt
+├── home.html
 ├── projects.html
 ├── robots.txt
-├── home.html
 └── .gitignore
 ```
 
+---
 
 ## 🌍 Multilanguage Support
 
@@ -65,11 +84,11 @@ Each page-specific script (like `about.js`) loads `strings.js`, which then uses 
 
 ## ♻️ Component-Like Reusability
 
-Thanks to the `engine.js`, content is built from reusable object-oriented classes that simulate the behavior of components:
+DigitalStudio’s rendering engine simulates React-like behavior using native JavaScript classes:
 
-- Sections, labels, buttons, and other elements are generated through instantiable objects.
-- Layout logic and structure is **centralized**, reducing repetition and ensuring consistency across pages.
-- This approach is conceptually similar to React, but fully native.
+- UI components like NavBar, Footer, and Toast are now standalone modules inside /js/componentes/.
+- Components are automatically created and rendered by the engine — you just need to declare a placeholder tag in your HTML (e.g. <footer></footer> || <div class="toast"></div>).
+- Logic, structure, and styling are handled dynamically — no need to repeat layout or markup patterns.
 
 
 ## 🛠️ Technologies Used
@@ -81,10 +100,11 @@ Thanks to the `engine.js`, content is built from reusable object-oriented classe
   - DOM manipulation
   - Dynamic rendering
 
+---
 
 ## 🚧 Purpose
 
-DigitalStudio explores a lightweight and framework-free approach to dynamic website construction. It aims to:
+DigitalStudio explores a clean and scalable way to build interactive, localized, and reusable interfaces without relying on third-party frameworks or build tools.
 
 - Provide a testbed for advanced JavaScript logic without using libraries.
 - Support multilingual, modular, and scalable web page generation.

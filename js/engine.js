@@ -1,9 +1,9 @@
 'use strict';
 
-import Toast from './components/toast.js';
-import Modal from './components/modal.js';
-import NavBar from './components/navbar.js';
-import Footer from './components/footer.js';
+import Toast from './components/Toast.js';
+import Modal from './components/Modal.js';
+import NavBar from './components/NavBar.js';
+import Footer from './components/Footer.js';
 
 export class Cookie {
 
