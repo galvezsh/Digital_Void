@@ -87,7 +87,7 @@ Each page-specific script (like `about.js`) loads `strings.js`, which then uses 
 DigitalStudio’s rendering engine simulates React-like behavior using native JavaScript classes:
 
 - UI components like NavBar, Footer, and Toast are now standalone modules inside /js/componentes/.
-- Components are automatically created and rendered by the engine — you just need to declare a placeholder tag in your HTML (e.g. <footer></footer> || <div class="toast"></div>).
+- Components are automatically created and rendered by the engine — you just need to declare a placeholder tag in your HTML (e.g. `<footer></footer> || <div class="toast"></div>`).
 - Logic, structure, and styling are handled dynamically — no need to repeat layout or markup patterns.
 
 
