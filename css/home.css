@@ -1,12 +1,15 @@
-@import url('themes.css');
+@import url('./themes.css');
+@import url('./shared.css');
 
 /************/
 /* ABOUT-ME */
 /************/
 .header .flex-header {
     display: flex;
+    flex-wrap: wrap;
     align-items: center;
     gap: 10px;
+    transition: 200ms ease-in-out;
 }
 
 .header .flex-header > span {

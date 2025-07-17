@@ -20,6 +20,7 @@ Each HTML file acts as a lightweight entry point — it contains minimal markup 
 DigitalStudio/
 ├── css/
 │ ├── about.css
+│ ├── animations.css
 │ ├── errors.css
 │ ├── home.css
 │ ├── projects.css

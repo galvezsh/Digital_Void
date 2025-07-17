@@ -5,7 +5,7 @@ import en from './en.js';
 
 const LANGUAGES = { es, en };
 
-class Strings {
+export default class Strings {
 
     constructor( language_code ) {
         // LINKS
@@ -39,5 +39,3 @@ class Strings {
         }
     }
 }
-
-export default Strings;

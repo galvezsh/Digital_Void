@@ -224,7 +224,7 @@ class Footer {
     }
 }
 
-class Cookie {
+export class Cookie {
 
     /**
      * @param {document} html The HTML document for access to the cookies
@@ -277,7 +277,7 @@ class Cookie {
     }
 }
 
-class Html {
+export class Html {
 
      /**
      * @param {document} html The HTML document for access to the HTML blocks
