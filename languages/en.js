@@ -1,6 +1,8 @@
 export default {
 
     // GENERIC
+    websiteName: "Digital Studio",
+
     info: "Information",
     warning: "Warning",
     error: "Error",
@@ -91,10 +93,6 @@ export default {
     projects_1_content: "In this document I explain how to build a powerful, affordable, and scalable homelab server step by step — ideal for various projects. Based on Ryzen, but I also include Intel alternatives. If you’re thinking of building your dream server, click the button to see it.",
 
     // ABOUT-HTML
-    websiteName: "Digital Studio",
-    websiteVersion: "v0.4.4 (2025.07)",
-    websiteDevelopers: "Alberto Gálvez (galvezsh)",
-
     aboutAboutTitle: "About the Website",
     aboutAboutVersion: "Website version: ",
     aboutAboutDevelopers: "Developers: ",

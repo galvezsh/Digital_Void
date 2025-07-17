@@ -1,6 +1,8 @@
 export default {
 
     // GENERIC
+    websiteName: "Estudio Digital",
+    
     info: "Información",
     warning: "Advertencia",
     error: "Error",
@@ -91,10 +93,6 @@ export default {
     projects_1_content: "En este documento explico paso a paso cómo construir un servidor casero potente, económico y escalable, ideal para múltiples proyectos. Basado en Ryzen, aunque también incluyo alternativas con Intel. Si te interesa montar el servidor de tus sueños, pincha en el botón para verlo.",
 
     // ABOUT-HTML
-    websiteName: "Estudio Digital",
-    websiteVersion: "v0.4.4 (2025.07)",
-    websiteDevelopers: "Alberto Gálvez (galvezsh)",
-
     aboutAboutTitle: "Acerca del sitio web",
     aboutAboutVersion: "Versión del sitio web: ",
     aboutAboutDevelopers: "Desarrolladores: ",

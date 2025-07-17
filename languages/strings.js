@@ -10,6 +10,10 @@ export default class Strings {
     constructor( language_code ) {
         // LINKS
         Object.assign(this, {
+            // WEBSITE
+            websiteVersion: "v0.4.6_Beta (2025.07)",
+            websiteDevelopers: "Alberto Gálvez (galvezsh)",
+
             // NAVBAR
             navbarStartLink: "/home",
             navbarProjectsLink: "/projects",
