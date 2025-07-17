@@ -7,8 +7,9 @@ import { Html, Cookie } from "./engine.js";
 // VARIABLES ////////////////////////////////
 /////////////////////////////////////////////
 
-const STRINGS = new Strings( new Cookie( document ).getCookie( "locale" ) );
-new Html( document, STRINGS, STRINGS.websiteName, STRINGS.navbarProjects );
+const COOKIE = new Cookie( document );
+const STRINGS = new Strings( COOKIE.getCookie( "locale" ) );
+new Html( document, STRINGS, COOKIE, STRINGS.navbarProjects );
 
 const LINKS = [ STRINGS.flipperZeroDoc, STRINGS.minecraftServersDoc, STRINGS.diyServerDoc ];
 

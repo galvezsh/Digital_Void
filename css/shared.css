@@ -252,6 +252,7 @@ button.small {
 .modal button {
     border-radius: 8px;
     margin: 0;
+    margin-right: 8px;
 }
 
 /**********/

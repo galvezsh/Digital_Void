@@ -1,248 +1,31 @@
 'use strict';
 
-class Toast {
-
-    /**
-     * 
-     * @param {document} document The HTML document for access to the HTML blocks
-     */
-    constructor( document, STRINGS ) {
-
-        this.strings = STRINGS;
-        this.toast = document.querySelector("div.toast");
-        this.header = document.querySelector("div.toast div.header");
-        this.body = document.querySelector("div.toast div.body");
-
-        this.headerStyle = "";
-        this.finishedToast = true;
-
-        /** Arrow function storing the handler for the "animationend" event.
-        * Ensures consistent use of the same function reference for adding and removing the event listener,
-        * maintaining the correct context (this) within the Toast class */
-        this.animationEndHandler = () => this.removeAnimationToast();
-    }
-
-    /** This method shows a toast that receives 3 parameters, in which based on the information received, 
-     * the user will be informed about that data
-     * 
-     * @param {int} level The gravity lever of the Toast
-     * @param {string} newContext The context of the Toast
-     * @param {int} timeout The lifetime of the Toast
-     * */
-    showToast( level, newContext, timeout ) {
-
-        if (this.finishedToast == true) {
-            this.finishedToast = false;
-    
-            // HeaderStyle
-            if (level == 0) {
-                this.headerStyle = "bg-info";
-                this.header.textContent = this.strings.info;
-        
-            } else if (level == 1) {
-                this.headerStyle = "bg-warning";
-                this.header.textContent = this.strings.warning;
-        
-            } else {
-                this.headerStyle = "bg-error";
-                this.header.textContent = this.strings.error;
-        
-            }
-        
-            this.header.classList.add( this.headerStyle );
-            this.body.textContent = newContext;
-            this.toast.style.display = "block";
-        
-            // AutoHide
-            setTimeout(() => this.hideToast(), timeout * 1000);
-    
-        } else {
-            console.log( this.strings.info + ": " + this.strings.blockedToast );
-        }
-    }
-
-    /** This method hides the toast shown above */
-    hideToast() {
-        this.toast.classList.add("animation-fadeOutDown");
-        this.toast.addEventListener("animationend", this.animationEndHandler);
-    }
-    
-    /** This method eliminates the listening event from the toast exit animation, since as it has been added through 
-     * JavaScript, it must also be eliminated so that it does not produce errors, otherwise the events would overlap 
-     * and errors would occur. */
-    removeAnimationToast() {
-        this.toast.classList.remove("animation-fadeOutDown");
-        this.header.classList.remove( this.headerStyle );
-        this.toast.removeEventListener("animationend", this.animationEndHandler);
-        this.toast.style.display = "none";
-
-        this.finishedToast = true;
-    }
-}
-
-class Modal {
-
-    /**
-     * 
-     * @param {document} document The HTML document for access to the HTML blocks
-     */
-    constructor( document ) {
-
-        this.modal = document.querySelector("div.modal");
-        this.header = document.querySelector("div.modal div.header .title");
-        this.body = document.querySelector("div.modal div.body");
-        this.footer = document.querySelector("div.modal div.footer");
-        this.primaryButton = document.querySelector("div.modal button.primary");
-        this.secondaryButton = document.querySelector("div.modal button.secondary");
-
-        document.querySelector("div.modal div.header i").addEventListener("click", () => { this.hideModal(); });
-
-        /** Arrow function storing the handler for the "animationend" event.
-        * Ensures consistent use of the same function reference for adding and removing the event listener,
-        * maintaining the correct context (this) within the Toast class */
-        this.animationEndHandler = () => this.removeAnimationModal();
-    }
-
-    /** This method shows a modal that receives 4 parameters, in which based on the information received, 
-     * the user will be informed about that data
-     * 
-     * @param {string} newTitle The title of the Modal
-     * @param {string} newContext The context of the Modal
-     * @param {string} primButton The text for the first button of the Modal
-     * @param {string} secnButton The text for the second button of the Modal
-     *   */
-    showQuestionModal( newTitle, newContext, primButton, secnButton ) {
-        this.header.innerHTML = newTitle;
-        this.body.innerHTML = newContext;
-        this.primaryButton.textContent = primButton;
-        this.secondaryButton.textContent = secnButton;
-        this.footer.style.display = "inline-block";
-        this.modal.style.display = "block";
-    }
-
-    /** This method shows a modal that receives 3 parameters, in which based on the information received, 
-     * the user will be informed about that data
-     * 
-     * @param {string} newTitle The title of the Modal
-     * @param {string} newContext The context of the Modal
-     * @param {string} secnButton The text for the second button of the Modal
-     *   */
-    showInfoModal( newTitle, newContext ) {
-        this.header.innerHTML = newTitle;
-        this.body.innerHTML = newContext;
-        this.footer.style.display = "none";
-        this.modal.style.display = "block";
-    }
-
-    /** This method hides the modal shown above */
-    hideModal() {
-        this.modal.classList.add("animation-fadeOut");
-        this.modal.addEventListener("animationend", this.animationEndHandler);
-    }
-
-    /** This method eliminates the listening event from the toast exit animation, since as it has been added through 
-     * JavaScript, it must also be eliminated so that it does not produce errors, otherwise the events would overlap 
-     * and errors would occur. */
-    removeAnimationModal() {
-        this.modal.classList.remove("animation-fadeOut");
-        this.modal.removeEventListener("animationend", this.animationEndHandler);
-        this.modal.style.display = "none";
-    }
-}
-
-class NavBar {
-
-    /**
-     * @param {document} html The HTML document for access to the HTML blocks
-     * @param {string} title The title that will appers in the right side of the Navbar
-     */
-    constructor( document, STRINGS, navItemSelected ) {
-        const nav = document.querySelector("main nav");
-        const ul = document.createElement("ul");
-        const navItems = {
-            [STRINGS.navbarStart]: [STRINGS.navbarStartLink],
-            [STRINGS.navbarProjects]: [STRINGS.navbarProjectsLink],
-            [STRINGS.navbarAbout]: [STRINGS.navbarAboutLink]
-        };
-
-        Object.entries( navItems ).forEach( ([text, href]) => {
-            const li = document.createElement("li");
-            const a = document.createElement("a");
-            
-            a.textContent = text;
-            a.href = href;
-            
-            if ( text === navItemSelected ) {
-                a.classList.add("active");
-            }
-            
-            li.appendChild(a);
-            ul.appendChild(li);
-        });
-
-        nav.appendChild(ul);
-    }
-}
-
-class Footer {
-
-    /**
-     * @param {document} document The HTML document for access to the HTML blocks
-     */
-    constructor( document, STRINGS ) {
-        const footer = document.querySelector("main footer");
-        const label = document.createElement("span");
-        const ul = document.createElement("ul");
-        const footerItems = {
-            ["fa-brands fa-youtube"]: [STRINGS.youtubeLink],
-            ["fa-brands fa-twitch"]: [STRINGS.twitchLink],
-            ["fa-brands fa-discord"]: [STRINGS.discordLink],
-            ["fa-brands fa-instagram"]: [STRINGS.instagramLink],
-            ["fa-brands fa-github"]: [STRINGS.githubLink],
-            ["fa-brands fa-linkedin"]: [STRINGS.linkedinLink]
-        };
-
-        label.innerHTML = "&copy; " + STRINGS.websiteName + " - " + new Date().getFullYear();
-
-        Object.entries( footerItems ).forEach( ([classlist, href]) => {
-            const li = document.createElement("li");
-            const a = document.createElement("a");
-            const icon = document.createElement("i");
-            
-            a.href = href;
-            a.target = "_blank";
-            a.rel = "noopener noreferrer";
-            icon.className = classlist;
-            
-            a.appendChild(icon);
-            li.appendChild(a);
-            ul.appendChild(li);
-        });
-
-        footer.appendChild(label);
-        footer.appendChild(ul);
-    }
-}
+import Toast from './components/toast.js';
+import Modal from './components/modal.js';
+import NavBar from './components/navbar.js';
+import Footer from './components/footer.js';
 
 export class Cookie {
 
     /**
-     * @param {document} html The HTML document for access to the cookies
+     * Creates a new Cookie helper instance.
+     * 
+     * @param {Document} document The HTML document used to access and manipulate cookies.
      */
     constructor( document ) {
         this.document = document;
+        this.lifetimeCookie = 30;
     }
 
-    /** 
-     * Gets the content of the cookie that is specified by parameter
+    /**
+     * Retrieves the value of a specific cookie.
      * 
-     * @param {string} cookieName The name of the cookie
-     * @returns Return the value of the cookie. If it does not exist, it returns null
+     * @param {string} cookieName The name of the cookie to retrieve.
      */
-    getCookie(cookieName) {
+    getCookie( cookieName ) {
         let cookies = this.document.cookie.split('; ');
 
-        for (let cookie of cookies) {
+        for ( let cookie of cookies ) {
             let [name, value] = cookie.split('=');
 
             if (name === cookieName) 
@@ -253,14 +36,14 @@ export class Cookie {
         return "null";
     }
 
-    /** 
-     * Creates the cookie with the values received by parameter 
+    /**
+     * Sets a cookie with the specified name and value.
      * 
-     * @param {string} name The name of the cookie
-     * @param {string} value The internal value of the cookie
-     * @param {int} days The lifetime of the cookie
-     * */   
-    setCookie(name, value, days) {
+     * @param {string} name The name of the cookie.
+     * @param {string} value The value to store in the cookie.
+     * @param {number} days (opcional) The number of the days of the cookie for stay 'active'.
+     */
+    setCookie( name, value, days = this.lifetimeCookie ) {
         let expirationDate = new Date();
         expirationDate.setDate( expirationDate.getDate() + days );
       
@@ -268,62 +51,79 @@ export class Cookie {
     }
 
     /**
-     * This function reset all the cookies to their default values
+     * Resets all relevant cookies to their default values.
      */
     resetCookies() {
-        this.setCookie( "logged", "false", 7 );
-        this.setCookie( "locale", "en", 7 );
-        this.setCookie( "theme", "dark", 7 );
+        this.setCookie( "logged", "false" );
+        this.setCookie( "locale", "en" );
+        this.setCookie( "theme", "dark" );
     }
 }
 
 export class Html {
 
-     /**
-     * @param {document} html The HTML document for access to the HTML blocks
-     * @param {string} title The title of the HTML
-     * @param {string} navTitle The label of the navbar
+    /**
+     * Initializes the HTML layout and sets localized content, theme, and startup behavior.
+     * 
+     * @param {Document} document The HTML document used for DOM manipulation.
+     * @param {object} STRINGS An object containing static strings for localization.
+     * @param {object} COOKIE An object containing statics methods for managing cookies.
+     * @param {string} navItemSelected The selected navigation item used as the page title suffix.
      */
-    constructor( document, STRINGS, docTitle, navItemSelected ) {
+    constructor( document, STRINGS, COOKIE, navItemSelected ) {
         this.navbar = new NavBar( document, STRINGS, navItemSelected );
         this.toast = new Toast( document, STRINGS );
         this.modal = new Modal( document );
         this.footer = new Footer( document, STRINGS );
-        this.cookie = new Cookie( document );
 
-        document.title = docTitle + ": " + navItemSelected;
+        document.title = STRINGS.websiteName + ": " + navItemSelected;
 
-        // SET THEME ON THE HTML
-        if ( this.cookie.getCookie("theme") == "light" )
-            document.body.classList.add("light");
+        this.setTheme( document, COOKIE );
+        this.setLocale( document, STRINGS );
 
-        // SET LOCALE ON THE HTML
-        Object.entries( STRINGS ).forEach( ([key, value]) => {
-            const element = document.getElementById(key);
-            if (element) {
-                // If the element is a <button> or an <input>
-                if (element.tagName === "INPUT" || element.tagName === "BUTTON") {
-                    element.value += value;
-                    element.innerHTML += value;
-                } else {
-                    element.innerHTML += value;
-                }
-            }
-        });
-
-        // Check if is the first time of the user in the website
-        if ( this.cookie.getCookie( "logged" ) != "true" ) {
-            this.firstStart( STRINGS );
+        // Trigger first-time setup if user has not been logged before
+        if ( COOKIE.getCookie( "logged" ) != "true" ) {
+            this.firstStart( COOKIE );
         }
     }
 
     /**
-     * This function performs a series of special events if it is the first time the user visits the web page
+     * Applies the selected theme to the document based on the stored cookie.
+     * 
+     * @param {Document} document The HTML document where the theme will be applied.
+     * @param {object} COOKIE An object containing statics methods for managing cookies.
      */
-    firstStart( STRINGS ) {
+    setTheme( document, COOKIE ) {
+        if ( COOKIE.getCookie("theme") == "light" )
+            document.body.classList.add("light");
+    }
+
+    /**
+     * Populates HTML elements with localized strings based on their IDs.
+     * 
+     * @param {Document} document The HTML document containing the elements to update.
+     * @param {object} STRINGS An object containing localized string values, where each key matches an element ID.
+     */
+    setLocale( document, STRINGS ) {
+        Object.entries( STRINGS ).forEach( ([key, value]) => {
+            const element = document.getElementById(key);
+
+            if ( element ) {
+                element.innerHTML += value;
+            }
+        });
+    }
+
+    /**
+     * Performs first-time setup operations, such as displaying a toast and initializing cookies.
+     * 
+     * @param {Cookie} COOKIE An instance of the Cookie class used to persist setup state.
+     */
+    firstStart( COOKIE ) {
         this.toast.showToast(1, "This website is under development and not yet finished. You may experience issues, especially on small screens. 🚧🔧🔨", 8);
-        this.cookie.setCookie( "logged", "true", 7);
-        this.cookie.setCookie( "locale", "en", 7);
-        this.cookie.setCookie( "theme", "dark", 7);
+        
+        COOKIE.setCookie( "logged", "true" );
+        COOKIE.setCookie( "locale", "en" );
+        COOKIE.setCookie( "theme", "dark" );
     }
 }

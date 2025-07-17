@@ -11,7 +11,7 @@ export default class Strings {
         // LINKS
         Object.assign(this, {
             // WEBSITE
-            websiteVersion: "v0.4.6_Beta (2025.07)",
+            websiteVersion: "v0.4.7_Beta (2025.07)",
             websiteDevelopers: "Alberto Gálvez (galvezsh)",
 
             // NAVBAR

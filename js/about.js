@@ -9,12 +9,12 @@ import { Html, Cookie } from "./engine.js";
 
 const COOKIE = new Cookie( document );
 const STRINGS = new Strings( COOKIE.getCookie( "locale" ) );
-const HTML = new Html( document, STRINGS, STRINGS.websiteName, STRINGS.navbarAbout );
+const HTML = new Html( document, STRINGS, COOKIE, STRINGS.navbarAbout );
 
-let localeEnButton = document.querySelector("#aboutConfigLocaleEn");
-let localeEsButton = document.querySelector("#aboutConfigLocaleEs");
-let themeLightButton = document.querySelector("#aboutConfigThemeLight");
-let themeDarkButton = document.querySelector("#aboutConfigThemeDark");
+const localeEnButton = document.querySelector("#aboutConfigLocaleEn");
+const localeEsButton = document.querySelector("#aboutConfigLocaleEs");
+const themeLightButton = document.querySelector("#aboutConfigThemeLight");
+const themeDarkButton = document.querySelector("#aboutConfigThemeDark");
 
 /////////////////////////////////////////////
 // SCRIPT ///////////////////////////////////
@@ -40,12 +40,12 @@ document.querySelector("#aboutConfigRestoreButton").addEventListener("click", ()
 /////////////////////////////////////////////
 
 function switchTheme( theme_code ) {
-    COOKIE.setCookie( "theme", theme_code, 7 );
+    COOKIE.setCookie( "theme", theme_code );
     location.reload();
 }
 
 function switchLanguage( language_code ) {
-    COOKIE.setCookie( "locale", language_code, 7 );
+    COOKIE.setCookie( "locale", language_code );
     location.reload();
 }
 

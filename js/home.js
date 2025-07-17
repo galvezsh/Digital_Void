@@ -7,8 +7,9 @@ import { Html, Cookie } from "./engine.js";
 // VARIABLES ////////////////////////////////
 /////////////////////////////////////////////
 
-const STRINGS = new Strings( new Cookie( document ).getCookie( "locale" ) );
-const HTML = new Html( document, STRINGS, STRINGS.websiteName, STRINGS.navbarStart );
+const COOKIE = new Cookie( document );
+const STRINGS = new Strings( COOKIE.getCookie( "locale" ) );
+const HTML = new Html( document, STRINGS, COOKIE, STRINGS.navbarStart );
 
 const workState = false;
 const workLabel = document.querySelector("#workLabel");
