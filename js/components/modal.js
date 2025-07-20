@@ -4,10 +4,8 @@ export default class Modal {
 
     /**
      * Initializes the modal component and binds necessary DOM elements and events.
-     * 
-     * @param {Document} document The HTML document used to access and modify modal-related elements.
      */
-    constructor( document ) {
+    constructor() {
         this.modal = document.querySelector( "div.modal" );
 
         this.buildBlock();
@@ -18,14 +16,14 @@ export default class Modal {
         this.primaryButton = document.querySelector( "div.modal button.primary" );
         this.secondaryButton = document.querySelector( "div.modal button.secondary" );
 
-        document.querySelector( "div.modal div.header i" ).addEventListener( "click", () => { this.hideModal(); } );
+        document.querySelector( "div.modal div.header i" ).addEventListener( "click", () => this.hideModal() );
 
         /**
          * Arrow function to handle the "animationend" event.
          * This ensures that the same function reference is used for both adding and removing the event listener,
          * preserving the correct context (`this`) within the Modal class.
          */
-        this.animationEndHandler = () => this.removeAnimationModal();
+        this.endAnimationHandler = () => this.removeAnimation();
     }
 
     /**
@@ -112,7 +110,7 @@ export default class Modal {
      */
     hideModal() {
         this.modal.classList.add( "animation-fadeOut" );
-        this.modal.addEventListener( "animationend", this.animationEndHandler );
+        this.modal.addEventListener( "animationend", this.endAnimationHandler );
     }
 
     /**
@@ -120,9 +118,9 @@ export default class Modal {
      * detaching the event listener, and setting `display` to "none".
      * This prevents animation event overlaps or memory leaks.
      */
-    removeAnimationModal() {
+    removeAnimation() {
         this.modal.classList.remove( "animation-fadeOut" );
-        this.modal.removeEventListener( "animationend", this.animationEndHandler );
+        this.modal.removeEventListener( "animationend", this.endAnimationHandler );
         this.modal.style.display = "none";
     }
 }

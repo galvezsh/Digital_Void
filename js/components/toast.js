@@ -5,10 +5,9 @@ export default class Toast {
     /**
      * Initializes the Toast component, binds necessary DOM elements, and sets up default state.
      * 
-     * @param {Document} document The HTML document used to access and modify toast-related elements.
      * @param {object} STRINGS An object containing localized string labels for toast headers and messages.
      */
-    constructor( document, STRINGS ) {
+    constructor( STRINGS ) {
         this.strings = STRINGS;
         this.toast = document.querySelector( "div.toast" );
 
@@ -25,7 +24,7 @@ export default class Toast {
          * Ensures that the same function reference is used when adding/removing the event listener,
          * preserving the correct context (`this`) within the Toast class.
          */
-        this.animationEndHandler = () => this.removeAnimationToast();
+        this.endAnimationHandler = () => this.removeEndAnimation();
     }
 
     /**
@@ -87,17 +86,17 @@ export default class Toast {
      */
     hideToast() {
         this.toast.classList.add( "animation-fadeOutDown" );
-        this.toast.addEventListener( "animationend", this.animationEndHandler );
+        this.toast.addEventListener( "animationend", this.endAnimationHandler );
     }
 
     /**
      * Finalizes the removal of the toast from view, resets its state,
      * and detaches the animation event listener to avoid memory leaks or duplicated events.
      */
-    removeAnimationToast() {
+    removeEndAnimation() {
         this.toast.classList.remove( "animation-fadeOutDown" );
         this.header.classList.remove( this.headerStyle );
-        this.toast.removeEventListener( "animationend", this.animationEndHandler );
+        this.toast.removeEventListener( "animationend", this.endAnimationHandler );
         this.toast.style.display = "none";
 
         this.finishedToast = true;

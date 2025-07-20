@@ -1,8 +1,8 @@
-# 🌐 DigitalStudio
+# 🌐 DigitalVoid
 
-**DigitalStudio** is a modular and multilingual web project built entirely with **HTML**, **CSS**, and **vanilla JavaScript**, using a custom runtime rendering engine and a component-oriented architecture.
+**DigitalVoid** is a modular and multilingual web project built entirely with **HTML**, **CSS**, and **vanilla JavaScript**, using a custom runtime rendering engine and a component-oriented architecture.
 
-Unlike frameworks like React or Vue, DigitalStudio relies on a fully native and framework-free approach, using JavaScript classes to dynamically generate content, support multiple languages, and simulate reusable components.
+Unlike frameworks like React or Vue, DigitalVoid relies on a fully native and framework-free approach, using JavaScript classes to dynamically generate content, support multiple languages, and simulate reusable components.
 
 ---
 
@@ -30,7 +30,7 @@ Each HTML file serves as a lightweight entry point. It only needs minimal markup
 ## 📁 Project Structure
 
 ```plaintext
-DigitalStudio/
+Digital_Void/
 ├── css/
 │   ├── about.css
 │   ├── animations.css
@@ -40,6 +40,9 @@ DigitalStudio/
 │   ├── shared.css
 │   └── themes.css
 ├── docs/
+│   ├── flipper.html
+│   ├── minecraft.html
+│   └── ryzen.html
 ├── errors/
 │   ├── 400.html
 │   ├── 401.html
@@ -51,6 +54,7 @@ DigitalStudio/
 │   │   ├── Modal.js
 │   │   ├── NavBar.js
 │   │   ├── Toast.js
+│   │   └── Void.js
 │   ├── about.js
 │   ├── engine.js  # Only handles rendering logic and component bootstrapping
 │   ├── home.js
@@ -84,7 +88,7 @@ Each page-specific script (like `about.js`) loads `strings.js`, which then uses 
 
 ## ♻️ Component-Like Reusability
 
-DigitalStudio’s rendering engine simulates React-like behavior using native JavaScript classes:
+DigitalVoid’s rendering engine simulates React-like behavior using native JavaScript classes:
 
 - UI components like NavBar, Footer, and Toast are now standalone modules inside /js/componentes/.
 - Components are automatically created and rendered by the engine — you just need to declare a placeholder tag in your HTML (e.g. `<footer></footer> || <div class="toast"></div>`).
@@ -104,7 +108,7 @@ DigitalStudio’s rendering engine simulates React-like behavior using native Ja
 
 ## 🚧 Purpose
 
-DigitalStudio explores a clean and scalable way to build interactive, localized, and reusable interfaces without relying on third-party frameworks or build tools.
+DigitalVoid explores a clean and scalable way to build interactive, localized, and reusable interfaces without relying on third-party frameworks or build tools.
 
 - Provide a testbed for advanced JavaScript logic without using libraries.
 - Support multilingual, modular, and scalable web page generation.

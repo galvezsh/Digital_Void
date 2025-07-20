@@ -8,11 +8,16 @@ const LANGUAGES = { es, en };
 export default class Strings {
 
     constructor( language_code ) {
-        // LINKS
+
+        // STRINGS
         Object.assign(this, {
             // WEBSITE
-            websiteVersion: "v0.4.7_Beta (2025.07)",
+            websiteVersion: "v0.4.8_Pre-release (2025.07)",
             websiteDevelopers: "Alberto Gálvez (galvezsh)",
+
+            // STATICS (Only in english because is the default language of the website. Basically for the first login and stuff like this...)
+            staticWelcomeVoid: "Welcome to the void",
+            staticBetaWebsite: "This website is under development and not yet finished. You may experience issues, especially on small screens. 🚧🔧🔨",
 
             // NAVBAR
             navbarStartLink: "/home",

@@ -8,10 +8,11 @@
 html {
     font-family: "Onest", sans-serif;
     font-size: 18px;
+    scroll-behavior: smooth;
 }
 
 body {
-    background-color: var(--bg-color);
+    background: var(--bg-color);
     color: var(--text-color-primary);
     margin: auto;
 }
@@ -74,13 +75,6 @@ a:hover {
     color: var(--text-color-secondary);
 }
 
-div.bg-gradient {
-    position: fixed;
-    inset: 0;
-    height: 100%;
-    z-index: -2;
-    background: var(--bg-gradient);
-}
 
 img.full {
     width: 100%;
@@ -94,6 +88,17 @@ main {
     margin: auto;
     max-width: 700px;
     transition: 200ms ease-in-out;
+}
+
+.yt-video {
+    width: 100%;
+    aspect-ratio: 16 / 9;
+}
+
+.yt-video iframe {
+    width: 100%;
+    height: 100%;
+    border-radius: 16px;
 }
 
 /***********/
@@ -144,6 +149,28 @@ button.secondary:disabled {
 button.small {
     font-size: 0.7rem;
     padding: 4px 8px;
+}
+
+/*********/
+/* VOID **/
+/*********/
+.void {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    justify-content: center;
+    align-items: center; 
+    background: var( --void-color );
+    z-index: 3;
+}
+
+.void h1 {
+    color: var( --void-text-color );
+    -webkit-text-stroke: 1px var( --text-color-primary );
+    margin: 0;
 }
 
 /*********/
@@ -202,7 +229,7 @@ button.small {
     height: 100%;
     text-align: center;
     background-color: var(--modal-outbound-color);
-    z-index: 2;
+    z-index: 1;
 }
 
 .modal .content {

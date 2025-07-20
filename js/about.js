@@ -7,9 +7,9 @@ import { Html, Cookie } from "./engine.js";
 // VARIABLES ////////////////////////////////
 /////////////////////////////////////////////
 
-const COOKIE = new Cookie( document );
+const COOKIE = new Cookie();
 const STRINGS = new Strings( COOKIE.getCookie( "locale" ) );
-const HTML = new Html( document, STRINGS, COOKIE, STRINGS.navbarAbout );
+const HTML = new Html( STRINGS, COOKIE, STRINGS.navbarAbout );
 
 const localeEnButton = document.querySelector("#aboutConfigLocaleEn");
 const localeEsButton = document.querySelector("#aboutConfigLocaleEs");
@@ -52,7 +52,7 @@ function switchLanguage( language_code ) {
 function resetCookies() {
     HTML.modal.showQuestionModal( STRINGS.resetCookiesHead, STRINGS.resetCookiesBody, STRINGS.apply, STRINGS.cancel );
     document.querySelector("#modalApply").addEventListener("click", () => {
-        HTML.cookie.resetCookies();
+        COOKIE.resetCookies();
         location.reload();
     });
 }

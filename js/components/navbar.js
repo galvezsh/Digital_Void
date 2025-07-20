@@ -5,11 +5,10 @@ export default class NavBar {
     /**
      * Initializes the navigation bar and builds its links.
      * 
-     * @param {Document} document The HTML document used to access and modify the navigation bar.
      * @param {object} STRINGS An object containing localized strings and corresponding navigation URLs.
      * @param {string} navItemSelected The currently active navigation item to be visually highlighted.
      */
-    constructor( document, STRINGS, navItemSelected ) {
+    constructor( STRINGS, navItemSelected ) {
         this.nav = document.querySelector( "main nav" );
 
         this.buildBlock( STRINGS, navItemSelected );

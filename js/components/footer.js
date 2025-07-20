@@ -5,10 +5,9 @@ export default class Footer {
     /**
      * Initializes the footer component and builds its structure.
      * 
-     * @param {Document} document The HTML document used to access and modify the footer element.
      * @param {object} STRINGS An object containing localized static strings and external social links.
      */
-    constructor( document, STRINGS ) {
+    constructor( STRINGS ) {
         this.footer = document.querySelector( "main footer" );
 
         this.buildBlock( STRINGS );
