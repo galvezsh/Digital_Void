@@ -42,7 +42,7 @@ Digital_Void/
 ├── docs/
 │   ├── flipper.html
 │   ├── minecraft.html
-│   └── ryzen.html
+│   └── homelab.html
 ├── errors/
 │   ├── 400.html
 │   ├── 401.html

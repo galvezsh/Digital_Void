@@ -10,7 +10,7 @@ export default class Strings {
     constructor( language_code ) {
 
         // STRINGS
-        Object.assign(this, {
+        Object.assign( this, {
             // WEBSITE
             websiteVersion: "v0.4.9_Pre-release (2025.07)",
             websiteDevelopers: "Alberto Gálvez (galvezsh)",
@@ -33,10 +33,10 @@ export default class Strings {
             linkedinLink: "https://www.linkedin.com/in/alberto-galvez-gandullo-01838a244/",
             emailLink: "alberto.galvez.n7@gmail.com",
 
-            // DOCS
+            // DOCS (must have the same name as the doc's name. ex: /projects/[homelab] -> /docs/[homelab].html)
             diyServerDoc: "/projects/homelab",
             minecraftServersDoc: "/projects/minecraft",
-            flipperZeroDoc: "/projects/flipperzero"
+            flipperZeroDoc: "/projects/flipper"
 
         });
 
