@@ -12,7 +12,7 @@ export default class Strings {
         // STRINGS
         Object.assign(this, {
             // WEBSITE
-            websiteVersion: "v0.4.8_Pre-release (2025.07)",
+            websiteVersion: "v0.4.9_Pre-release (2025.07)",
             websiteDevelopers: "Alberto Gálvez (galvezsh)",
 
             // STATICS (Only in english because is the default language of the website. Basically for the first login and stuff like this...)
@@ -34,7 +34,7 @@ export default class Strings {
             emailLink: "alberto.galvez.n7@gmail.com",
 
             // DOCS
-            diyServerDoc: "/projects/ryzen",
+            diyServerDoc: "/projects/homelab",
             minecraftServersDoc: "/projects/minecraft",
             flipperZeroDoc: "/projects/flipperzero"
 

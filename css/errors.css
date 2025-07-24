@@ -2,9 +2,9 @@
 @import url('themes.css');
 
 body {
-    font-family: 'Arial', sans-serif;
-    background-color: var( --bg-color );
-    margin: 0;
+    font-family: 'Onest', sans-serif;
+    background: var(--bg-color);
+    margin: 0 auto;
     padding: 0;
     display: flex;
     justify-content: center;
@@ -12,34 +12,32 @@ body {
     height: 100vh;
 }
 
-div.bg-radial {
-    position: fixed;
-    height: 100%;
-    inset: 0;
-    z-index: -2;
-    background: var( --bg-gradient );
-}
-
 .error-container {
     text-align: center;
 }
 
 h1 {
-    color: var( --link-color-hover );
+    color: var(--text-color-secondary);
     font-size: 3em;
 }
 
 p {
-    color: var( --text-color );
+    color: var(--text-color-primary);
     font-size: 1.2em;
 }
 
 a {
-    color: var( --link-color );
+    color: var(--text-color-tertiary);
     text-decoration: none;
-    transition: 150ms ease-in-out;
+    transition: 200ms ease-in-out;
 }
 
 a:hover {
-    color: var( --link-color-hover );
+    color: var(--text-color-secondary);
+}
+
+@media ( max-width: 500px ) {
+    body {
+        max-width: 325px;
+    }
 }
