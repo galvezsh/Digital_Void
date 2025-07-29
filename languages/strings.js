@@ -12,12 +12,15 @@ export default class Strings {
         // STRINGS
         Object.assign( this, {
             // WEBSITE
-            websiteVersion: "v0.4.9_Pre-release (2025.07)",
+            websiteVersion: "v1.0.0_Release (2025.08)",
             websiteDevelopers: "Alberto Gálvez (galvezsh)",
 
             // STATICS (Only in english because is the default language of the website. Basically for the first login and stuff like this...)
             staticWelcomeVoid: "Welcome to the void",
-            staticBetaWebsite: "This website is under development and not yet finished. You may experience issues, especially on small screens. 🚧🔧🔨",
+
+            // LOCALE-BUTTONS
+            aboutConfigLocaleEn: "🇺🇸 Switch to English 🇬🇧",
+            aboutConfigLocaleEs: "🇪🇸 Cambiar a español 🇲🇽",
 
             // NAVBAR
             navbarStartLink: "/home",

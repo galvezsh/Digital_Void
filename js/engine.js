@@ -117,7 +117,7 @@ export class Html {
      * @param {object} COOKIE An object containing statics methods for managing cookies.
      */
     firstStart( STRINGS, COOKIE ) {
-        this.toast.showToast(1, STRINGS.staticBetaWebsite, 8);
+        // this.toast.showToast(1, STRINGS.staticBetaWebsite, 8);
         this.void.showVoid();
 
         COOKIE.setCookie( "logged", "true" );

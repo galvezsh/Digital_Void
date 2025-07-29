@@ -98,7 +98,7 @@ export default {
     aboutAboutDevelopers: "Desarrolladores: ",
 
     aboutLegacyTitle: "Legado de antaño",
-    aboutLegacyLabel: "Antes de llamarse <strong>'Estudio Digital'</strong>, el sitio web pasó por varias etapas. Aquí puedes ver cómo lucía el inicio con cada versión:",
+    aboutLegacyLabel: "Antes de llamarse <strong>'Vacio Digital'</strong>, el sitio web pasó por varias etapas. Aquí puedes ver cómo lucía el inicio con cada versión:",
     aboutLegacy_1: "<strong>Nacimiento de GSSR Web</strong>, diseño y desarrollo de la estructura básica.",
     aboutLegacy_2: "<strong>Desarrollo completo de GSSR Web</strong>, orientación a objetos en JavaScript, kernel modular basado en funciones, integración local de Bootstrap 5.2.3 y AnimateCSS 4.1.1.",
     aboutLegacy_3: "<strong>Rediseño completo de la interfaz y reconstrucción del código</strong>, abandono de Bootstrap y AnimateCSS, y renombrado a 'El estudio de Gálvez'.",
@@ -106,8 +106,6 @@ export default {
     aboutConfigTitle: "Configuración del sitio web",
 
     aboutConfigLocaleLabel: "Para cambiar el <strong>idioma del sitio web</strong>, pulse uno de los siguientes botones. Idiomas disponibles: inglés y español.",
-    aboutConfigLocaleEn: "🇺🇸 Cambiar a inglés 🇬🇧",
-    aboutConfigLocaleEs: "🇪🇸 Cambiar a español 🇲🇽",
 
     aboutConfigThemeLabel: "Para cambiar el <strong>tema del sitio web</strong>, pulse uno de los siguientes botones según su preferencia por tema claro u oscuro:",
     aboutConfigThemeLight: "☀️ Cambiar a tema claro ☀️",
