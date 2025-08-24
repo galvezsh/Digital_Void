@@ -12,10 +12,10 @@ export default class Strings {
         // STRINGS
         Object.assign( this, {
             // WEBSITE
-            websiteVersion: "v1.0.0_Release (2025.08)",
+            websiteVersion: "v1.0.1_Release (2025.08)",
             websiteDevelopers: "Alberto Gálvez (galvezsh)",
 
-            // STATICS (Only in english because is the default language of the website. Basically for the first login and stuff like this...)
+            // STATICS (Only in english because is the default language of the website. Basically for the first login and stuff like this...
             staticWelcomeVoid: "Welcome to the void",
 
             // LOCALE-BUTTONS
